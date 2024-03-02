@@ -91,6 +91,7 @@ The login page will have a login form for user authentication. It will also incl
 This page will contain three main sections: input, output, and history. Input will look like a regular form with a text area. The spaces where the output and history return will look like text area boxes as well.
 
 ***Educational Page***
+
 This page will contain two main sections the first with Best Practice Information with a descriptive set of paragraphs. The other section will include a list of organized links to relevant sources of educational websites (this will include BrainStation deployed alumni relevant apps and not BrainStation relevant apps). If I reach to do nice to have, I will add below an image and Immigration advisor links
 
 **Each page will include a nav and footer component.** The nav will include the logo and the navigation bar. The footer will include ways of contacting the creator of the app, it also will repeat the disclaimer about the educational/informational process of this website and the need to always check the official Canadian government website and authorities for confirmation before taking any legal action.
@@ -190,64 +191,76 @@ It will include the Google logo for sign-up connection on the same page as the l
 
 Estimated time: 15h
 
-<u>Creating the React app Functional Component and Pages with the basic structure and basic layout styling.</u>
+_Creating the React app Functional Component and Pages with the basic structure and basic layout styling._
 
   + Create Git local repo main and three sprints’ branches.
   + Add React Router and organize pages and components inside pages.
   + Add a basic layout styling following the mockups.
   + Organize the folder structure tree following best practices.
 
-Create an Express app with the basic structure of the folder and the functionalities for storing data in the Database.
-•	Create Git local repo main and three sprints’ branches.
-•	Create an express app and organize the folder following best practices and convenience: this  includes folders for Routes, Models, and Controllers files. Organize the import/export flow conveniently.
-•	Add the necessary drives to use MySQL and MongoDB databases.
-•	On the folder for models (database tables information) create files where you define a connection with MySQL Database and create tables according with design. Use Knex.js for this.  
-•	On the same folder create a connection with MongoDB using Mongoose
+_Create an Express app with the basic structure of the folder and the functionalities for storing data in the Database._
+
+  + Create Git local repo main and three sprints’ branches.
+  + Create an express app and organize the folder following best practices and convenience: this  includes folders for Routes, Models, and Controllers files. Organize the import/export flow conveniently.
+  +	Add the necessary drives to use MySQL and MongoDB databases.
+  +	On the folder for models (database tables information) create files where you define a connection with MySQL Database and create tables according with design. Use Knex.js for this.  
+  +	On the same folder create a connection with MongoDB using Mongoose
 
 **Sprint 2 Tasks**
 
 Estimated time: 30h.
-Adding frontend needed functionality. 
-•	Setting necessary props, hooks (tentatively will be useState, useEffect, useParams), and event listeners.
-•	Connecting Axios on JSX and with the right endpoints for data transmission between front and backend
-•	Test all endpoint functionalities.
-Connecting necessary middlewares and controllers for adding OpenAI API and Passport.js for authentication
-•	Add all the routes on the route folder based on the different endpoints, different methods, and expected functionalities. 
-•	Setting the configuration for use OpenAI API including the necessary output settings that adjust to my app goals. This means: 
-A.	connecting with the API
-B.	adding my private key variable (I will use an environmental variable)
-C.	adding configuration details
-D.	set that the information came from a certain endpoint.
-E.	set that the output will be delivered in another defined endpoint.
-•	Setting the Passport.js. In the case of JWT authentication connects with the database-relevant model.
-•	Connecting the MySQL user model key entry with an entry in MongoDB for setting the history functionality 
 
-Sprint 3 Tasks
+_Adding frontend needed functionality._ 
+
+  + Setting necessary props, hooks (tentatively will be useState, useEffect, useParams), and event listeners.
+  +	Connecting Axios on JSX and with the right endpoints for data transmission between front and backend
+  + Test all endpoint functionalities.
+
+_Connecting necessary middlewares and controllers for adding OpenAI API and Passport.js for authentication_
+
+  +	Add all the routes on the route folder based on the different endpoints, different methods, and expected functionalities. 
+  +	Setting the configuration for use OpenAI API including the necessary output settings that adjust to my app goals. This means: 
+       A.	connecting with the API
+       B.	adding my private key variable (I will use an environmental variable)
+       C.	adding configuration details
+       D.	set that the information came from a certain endpoint.
+       E.	set that the output will be delivered in another defined endpoint.
+  +	Setting the Passport.js. In the case of JWT authentication connects with the database-relevant model.
+  +	Connecting the MySQL user model key entry with an entry in MongoDB for setting the history functionality 
+
+**Sprint 3 Tasks**
+
 Estimated time: 35 h.
 
-Add the styling details.
-•	Improve the layout and add responsiveness with an approach of mobile-first. Set the right proportion between elements according to mockups.
-•	Add styles related to the different backgrounds and colors.
-•	Add styles related to texts.
-•	Add animation and other necessary visual effects.
-Add the necessary search and download/upload capabilities whenever necessary on the website.
-•	Add filtering by keyword with React. 
-•	Add filtering with Express an amount of entry of 3 last one every time the user clicks the show history button. If it clicks again, it will obtain the three last after that.
-•	File upload/download will involve server-side and client-side apps.
-Organize settings, environmental variables, and general codebase for deployment.
-•	Use Cors express middleware to establish communication between the React and Express apps once deployed.
-•	Do the necessary configuration changes.
-•	Follow the deployment steps for the React app on Netlify, adding the Express app deployed URL as the backend URL. I will try to set it with HTTP to improve security.
-•	For deploying the Express app, I will use Web Hosting Canada.
+_Add the styling details._
 
-Sprint 4 - Under will be nice to have.
-Adding the functionality related to immigration advisor offices in the city that connect with Google Map
-•	Adding all the styling and information for this new section
-•	Setting the configuration for use of the Google Map API. This means: 
-A.	connecting with the API
-B.	adding my private key variable (I will use an environmental variable)
-C.	adding configuration details
-D.	set that the information came from a certain endpoint when a clicking event happens over one of the immigration advisor office images/cards, particularly the address information is the one being used to make the automatic Google Map search.
+  + Improve the layout and add responsiveness with an approach of mobile-first. Set the right proportion between elements according to mockups.
+  + Add styles related to the different backgrounds and colors.
+  + Add styles related to texts.
+  + Add animation and other necessary visual effects.
+
+_Add the necessary search and download/upload capabilities whenever necessary on the website._
+
+  + Add filtering by keyword with React. 
+  +	Add filtering with Express an amount of entry of 3 last one every time the user clicks the show history button. If it clicks again, it will obtain the three last after that.
+  +	File upload/download will involve server-side and client-side apps.
+
+_Organize settings, environmental variables, and general codebase for deployment._
+
+  +	Use Cors express middleware to establish communication between the React and Express apps once deployed.
+  +	Do the necessary configuration changes.
+  +	Follow the deployment steps for the React app on Netlify, adding the Express app deployed URL as the backend URL. I will try to set it with HTTP to improve security.
+  +	For deploying the Express app, I will use Web Hosting Canada.
+
+**Sprint 4 - Under will be nice to have.**
+
+_Adding the functionality related to immigration advisor offices in the city that connect with Google Map_
+  +	Adding all the styling and information for this new section
+  + Setting the configuration for use of the Google Map API. This means: 
+      A.	connecting with the API
+      B.	adding my private key variable (I will use an environmental variable)
+      C.	adding configuration details
+      D.	set that the information came from a certain endpoint when a clicking event happens over one of the immigration advisor office images/cards, particularly the address information is the one being used to make the automatic Google Map search.
 
 
 
