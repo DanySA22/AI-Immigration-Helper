@@ -75,11 +75,11 @@ On the same page, users will find links to website sources with educational purp
 
 **Functionality Diagram**
 
-![Functionality Diagram 1](https://drive.google.com/file/d/1UjVIxGU6E6dN0TGuq3Mayyloc6KwvahE/view?usp=drive_link)
+![Functionality Diagram 1](./ReadmeImages/AppFunctionality1.jpg)
 
-![Functionality Diagram 2](https://drive.google.com/file/d/1oUJHhca992BmEmCgGvQTdS2-zlLrBgt4/view?usp=drive_link)
+![Functionality Diagram 2](./ReadmeImages/AppFunctionality2.jpg)
 
-![Functionality Diagram 3](https://drive.google.com/file/d/1d4Ac3eFMjyZPgp97p_rQ81K3nPeM3e94/view?usp=drive_link)
+![Functionality Diagram 3](./ReadmeImages/AppFunctionality3.jpg)
 
 ### Tech Stack
 
@@ -132,23 +132,23 @@ This page will contain two main sections the first with Best Practice Informatio
 
 **Home Page**
 
-![Home Page](https://drive.google.com/file/d/1bB2fFWEpJly8XZp1g9dCZQCS3o-5azLd/view?usp=drive_link)
+![Home Page](./ReadmeImages/HomePage.jpg)
 
 **Signup Page**
 
-![Signup Page](https://drive.google.com/file/d/1N_RvmQgu8hmrKzCKxeNdFPLvw8ASVb0o/view?usp=drive_link)
+![Signup Page](./ReadmeImages/SignupPage)
 
 **Login Page**
 
-![Login Page](https://drive.google.com/file/d/1j_SsT8vs2BHevRCCVEuM3X-dm28OdnWL/view?usp=drive_link)
+![Login Page](./ReadmeImages/LoginPage.jpg)
 
 **AI Assistance Page**
 
-![AI Assistance Page](https://drive.google.com/file/d/1nugd_upu31nJ0CPr72vU2zfAfbjLPr0d/view?usp=drive_link)
+![AI Assistance Page](./ReadmeImages/AIAssistancePage.jpg)
 
 **Educational Page**
 
-![Educational Page](https://drive.google.com/file/d/11GMXE0KDnGXNbnJYr_L0VDjWH2mqlWRr/view?usp=drive_link)
+![Educational Page](./ReadmeImages/EducationalPage.jpg)
 
 
 
@@ -158,7 +158,7 @@ I will be using MySQL and MongoDB databases.
 
 On MySQL, I will have a user table for adding the new users' information. On MongoDB I will store the OpenAI API output that authenticated users decide to save. The authenticated user will be connected to the right NoSQL data through a unique identifier.
 
-![Database Diagram](https://drive.google.com/file/d/1VW_CS9XU0Qj1EBzVW7lPmxbyF8GWejLS/view?usp=drive_link)
+![Database Diagram](./ReadmeImages/DatabasesDiagram.jpg)
 
 
 ### Endpoints
@@ -277,7 +277,7 @@ _Organize settings, environmental variables, and general codebase for deployment
   +	Follow the deployment steps for the React app on Netlify, adding the Express app deployed URL as the backend URL. I will try to set it with HTTP to improve security.
   +	For deploying the Express app, I will use Web Hosting Canada.
 
-**Sprint 4 - Under will be nice to have.**
+**Sprint 4 Tasks- Under will be nice to have.**
 
 _Adding the functionality related to immigration advisor offices in the city that connect with Google Map_
   +	Adding all the styling and information for this new section
