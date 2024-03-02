@@ -1,3 +1,20 @@
+# Table of Contents
++ [Project Title](#project-title)
+   + [Overview](#overview)
+      + [Problem](#problem)
+      + [User Profile](#user-profile)
+      + [Features](#features)
+   + [Implementation](#implementation)
+      + [Tech Stack](#tech-stack) 
+      + [APIs](#apis)
+      + [Sitemap](#sitemap)
+      + [Mockups](#mockups)
+      + [Data](#data)
+      + [Endpoints](#endpoints)
+      + [Auth](#auth)
+      + [Roadmap](#roadmap)
+      + [Nice-to-have](#nice-to-have)
+
 # Project Title
 
 AI Immigration Helper 
@@ -56,6 +73,13 @@ On the same page, users will find links to website sources with educational purp
 
 ## Implementation
 
+**Functionality Diagram**
+[Functionality Diagram 1](https://drive.google.com/file/d/1UjVIxGU6E6dN0TGuq3Mayyloc6KwvahE/view?usp=drive_link)
+
+[Functionality Diagram 2](https://drive.google.com/file/d/1oUJHhca992BmEmCgGvQTdS2-zlLrBgt4/view?usp=drive_link)
+
+[Functionality Diagram 3](https://drive.google.com/file/d/1d4Ac3eFMjyZPgp97p_rQ81K3nPeM3e94/view?usp=drive_link)
+
 ### Tech Stack
 
 I will be using the MERN stack as the core and adding technologies on top of that.
@@ -99,6 +123,26 @@ This page will contain two main sections the first with Best Practice Informatio
 
 ### Mockups
 
+**Home Page**
+
+[Home Page](https://drive.google.com/file/d/1bB2fFWEpJly8XZp1g9dCZQCS3o-5azLd/view?usp=drive_link)
+
+**Signup Page**
+
+[Signup Page](https://drive.google.com/file/d/1N_RvmQgu8hmrKzCKxeNdFPLvw8ASVb0o/view?usp=drive_link)
+
+**Login Page**
+
+[Login Page](https://drive.google.com/file/d/1j_SsT8vs2BHevRCCVEuM3X-dm28OdnWL/view?usp=drive_link)
+
+**AI Assistance Page**
+
+[AI Assistance Page](https://drive.google.com/file/d/1nugd_upu31nJ0CPr72vU2zfAfbjLPr0d/view?usp=drive_link)
+
+**Educational Page**
+
+[Educational Page](https://drive.google.com/file/d/11GMXE0KDnGXNbnJYr_L0VDjWH2mqlWRr/view?usp=drive_link)
+
 
 
 ### Data
@@ -107,61 +151,64 @@ I will be using MySQL and MongoDB databases.
 
 On MySQL, I will have a user table for adding the new users' information. On MongoDB I will store the OpenAI API output that authenticated users decide to save. The authenticated user will be connected to the right NoSQL data through a unique identifier.
 
+[Database Diagram](https://drive.google.com/file/d/1VW_CS9XU0Qj1EBzVW7lPmxbyF8GWejLS/view?usp=drive_link)
+
 
 ### Endpoints
 
-Denomination	HTTP method	Params	Example Response
-authent/sign-up/	POST
-Add the data for creating a user account		{id: 1,
+| Denomination | HTTP method |	Params	| Example Response |
+|--------------|-------------|----------|------------------|
+|'authent/sign-up/'|	POST |     | Add the data for creating a user account		
+{id: 1,
 username: ‘master28’,
 email: testing@gmail.com,
 password: ‘testing28$’
-}
-authent/login/	POST
+} |
+|'authent/login/' |  POST  |    | Add the data for authenticating an user.
+{email: testing@gmail.com,
+password: testing28$}  |
 
-Add the data for authenticating an user.		{email: testing@gmail.com,
-password: testing28$}
-ai/input	POST
-Add the data that will be processed by OpenAI API		{input: ‘’Steps for obtaining a Canadian visitor visa”}
-ai/output/	GET
-Retrieve the response from OpenAI API		{output: The steps for … (OpenAI API text generated)}
-ai/output/save/:id	POST
+|'ai/input' | POST  |   |  Add the data that will be processed by OpenAI API		
+{input: ‘’Steps for obtaining a Canadian visitor visa”} |
 
-Add the OpenAI API response data to the MongoDB database, adding a date timestamp and an id identification that matches the authenticated user	Header Parameters (this endpoint requires tokens on the header)	{id: 1,
+|'ai/output/' |	GET  |   | Retrieve the response from OpenAI API		
+{output: The steps for … (OpenAI API text generated)}|
+
+|'ai/output/save/:id' |	POST  |  Header Parameters (this endpoint requires tokens on the header) |  Add the OpenAI API response data to the MongoDB database, adding a date timestamp and an id identification that matches the authenticated user		
+{id: 1,
 date: 25/2/2024,
-output: The steps for … (OpenAI API text generated)}
-history/:id	GET
+output: The steps for … (OpenAI API text generated)} |
 
-Retrieve the user related data from MongoDB, 3 data entry at the time	Header Parameters (this endpoint requires tokens on the header)	[{date: 25/2/2024,
+|'history/:id' | GET  |  Header Parameters (this endpoint requires tokens on the header) | Retrieve the user related data from MongoDB, 3 data entry at the time		
+[{date: 25/2/2024,
 output: The steps for … (OpenAI API text generated)},
 {date: 26/2/2024,
 output: The steps for … (OpenAI API text generated)}
 {date: 27/2/2024,
 output: The steps for … (OpenAI API text generated)}
-]
-history/:id/download	GET
-
-
+] |
+|history/:id/download |	GET  |  Header Parameters (this endpoint requires tokens on the header) |
 Download the previous
-Retrieved data	Header Parameters (this endpoint requires tokens on the header)	[{date: 25/2/2024,
+[{date: 25/2/2024,
 output: The steps for … (OpenAI API text generated)},
 {date: 26/2/2024,
 output: The steps for … (OpenAI API text generated)}
 {date: 27/2/2024,
 output: The steps for … (OpenAI API text generated)}
-]
+] |
 
 
-React Routes	Related Page
-‘/’	Home Page
+| React Routes | Related Page |
+|--------------|--------------|
+|‘/’| Home Page |
 
-‘/signup’	Signup Page
+|‘/signup’|	Signup Page |
 
-‘/login’	Login Page
+|‘/login’  |	Login Page |
 
-‘/aiassistance’	AI Assistance Page
+|‘/aiassistance’ |	AI Assistance Page |
 
-‘/educational’	Educational Page
+|‘/educational’	| Educational Page |
 
 
 
@@ -220,11 +267,17 @@ _Connecting necessary middlewares and controllers for adding OpenAI API and Pass
 
   +	Add all the routes on the route folder based on the different endpoints, different methods, and expected functionalities. 
   +	Setting the configuration for use OpenAI API including the necessary output settings that adjust to my app goals. This means: 
+
        A.	connecting with the API
+
        B.	adding my private key variable (I will use an environmental variable)
+
        C.	adding configuration details
+
        D.	set that the information came from a certain endpoint.
+
        E.	set that the output will be delivered in another defined endpoint.
+
   +	Setting the Passport.js. In the case of JWT authentication connects with the database-relevant model.
   +	Connecting the MySQL user model key entry with an entry in MongoDB for setting the history functionality 
 
@@ -257,9 +310,13 @@ _Organize settings, environmental variables, and general codebase for deployment
 _Adding the functionality related to immigration advisor offices in the city that connect with Google Map_
   +	Adding all the styling and information for this new section
   + Setting the configuration for use of the Google Map API. This means: 
+
       A.	connecting with the API
+
       B.	adding my private key variable (I will use an environmental variable)
+
       C.	adding configuration details
+
       D.	set that the information came from a certain endpoint when a clicking event happens over one of the immigration advisor office images/cards, particularly the address information is the one being used to make the automatic Google Map search.
 
 
