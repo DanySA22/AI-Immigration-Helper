@@ -274,7 +274,7 @@ _Organize settings, environmental variables, and general codebase for deployment
 
   +	Use Cors express middleware to establish communication between the React and Express apps once deployed.
   +	Do the necessary configuration changes.
-  +	Follow the deployment steps for the React app on Netlify, adding the Express app deployed URL as the backend URL. I will try to set it with HTTP to improve security.
+  +	Follow the deployment steps for the React app on Netlify, adding the Express app deployed URL as the backend URL. I will try to set it with HTTPs to improve security.
   +	For deploying the Express app, I will use Web Hosting Canada.
 
 **Sprint 4 Tasks- Under will be nice to have.**
