@@ -136,7 +136,7 @@ This page will contain two main sections the first with Best Practice Informatio
 
 **Signup Page**
 
-![Signup Page](./ReadmeImages/SignupPage)
+![Signup Page](./ReadmeImages/SignupPage.jpg)
 
 **Login Page**
 
