@@ -12,8 +12,8 @@
       + [Data](#data)
       + [Endpoints](#endpoints)
       + [Auth](#auth)
-      + [Roadmap](#roadmap)
-      + [Nice-to-have](#nice-to-have)
+   + [Roadmap](#roadmap)
+   + [Nice-to-have](#nice-to-have)
 
 # Project Title
 
@@ -74,22 +74,29 @@ On the same page, users will find links to website sources with educational purp
 ## Implementation
 
 **Functionality Diagram**
-[Functionality Diagram 1](https://drive.google.com/file/d/1UjVIxGU6E6dN0TGuq3Mayyloc6KwvahE/view?usp=drive_link)
 
-[Functionality Diagram 2](https://drive.google.com/file/d/1oUJHhca992BmEmCgGvQTdS2-zlLrBgt4/view?usp=drive_link)
+![Functionality Diagram 1](https://drive.google.com/file/d/1UjVIxGU6E6dN0TGuq3Mayyloc6KwvahE/view?usp=drive_link)
 
-[Functionality Diagram 3](https://drive.google.com/file/d/1d4Ac3eFMjyZPgp97p_rQ81K3nPeM3e94/view?usp=drive_link)
+![Functionality Diagram 2](https://drive.google.com/file/d/1oUJHhca992BmEmCgGvQTdS2-zlLrBgt4/view?usp=drive_link)
+
+![Functionality Diagram 3](https://drive.google.com/file/d/1d4Ac3eFMjyZPgp97p_rQ81K3nPeM3e94/view?usp=drive_link)
 
 ### Tech Stack
 
 I will be using the MERN stack as the core and adding technologies on top of that.
 
-+ Styling: Sass
-+ Client-Side functionality: React.js, Axios library
-+ Server-side functionality:  Node.js, Express.js
-+ Database: MySQL (SQL), MongoDB (NoSQL), Knex.js (query builder), Mongoose (ODM)
-+ Authentication: Passport.js
-+ External APIs: OpenAI API, Google Map API (under nice to have)
++ Styling: Sass 
+
+ + Client-Side functionality: React.js, Axios library  
+
++ Server-side functionality:  Node.js, Express.js  
+
++ Database: MySQL (SQL), MongoDB (NoSQL), Knex.js (query builder), Mongoose (ODM)  
+
++ Authentication: Passport.js  
+
++ External APIs: OpenAI API, Google Map API (under nice to have) 
+
 
 
 ### APIs
@@ -125,23 +132,23 @@ This page will contain two main sections the first with Best Practice Informatio
 
 **Home Page**
 
-[Home Page](https://drive.google.com/file/d/1bB2fFWEpJly8XZp1g9dCZQCS3o-5azLd/view?usp=drive_link)
+![Home Page](https://drive.google.com/file/d/1bB2fFWEpJly8XZp1g9dCZQCS3o-5azLd/view?usp=drive_link)
 
 **Signup Page**
 
-[Signup Page](https://drive.google.com/file/d/1N_RvmQgu8hmrKzCKxeNdFPLvw8ASVb0o/view?usp=drive_link)
+![Signup Page](https://drive.google.com/file/d/1N_RvmQgu8hmrKzCKxeNdFPLvw8ASVb0o/view?usp=drive_link)
 
 **Login Page**
 
-[Login Page](https://drive.google.com/file/d/1j_SsT8vs2BHevRCCVEuM3X-dm28OdnWL/view?usp=drive_link)
+![Login Page](https://drive.google.com/file/d/1j_SsT8vs2BHevRCCVEuM3X-dm28OdnWL/view?usp=drive_link)
 
 **AI Assistance Page**
 
-[AI Assistance Page](https://drive.google.com/file/d/1nugd_upu31nJ0CPr72vU2zfAfbjLPr0d/view?usp=drive_link)
+![AI Assistance Page](https://drive.google.com/file/d/1nugd_upu31nJ0CPr72vU2zfAfbjLPr0d/view?usp=drive_link)
 
 **Educational Page**
 
-[Educational Page](https://drive.google.com/file/d/11GMXE0KDnGXNbnJYr_L0VDjWH2mqlWRr/view?usp=drive_link)
+![Educational Page](https://drive.google.com/file/d/11GMXE0KDnGXNbnJYr_L0VDjWH2mqlWRr/view?usp=drive_link)
 
 
 
@@ -151,63 +158,28 @@ I will be using MySQL and MongoDB databases.
 
 On MySQL, I will have a user table for adding the new users' information. On MongoDB I will store the OpenAI API output that authenticated users decide to save. The authenticated user will be connected to the right NoSQL data through a unique identifier.
 
-[Database Diagram](https://drive.google.com/file/d/1VW_CS9XU0Qj1EBzVW7lPmxbyF8GWejLS/view?usp=drive_link)
+![Database Diagram](https://drive.google.com/file/d/1VW_CS9XU0Qj1EBzVW7lPmxbyF8GWejLS/view?usp=drive_link)
 
 
 ### Endpoints
 
 | Denomination | HTTP method |	Params	| Example Response |
 |--------------|-------------|----------|------------------|
-|'authent/sign-up/'|	POST |     | Add the data for creating a user account		
-{id: 1,
-username: ‘master28’,
-email: testing@gmail.com,
-password: ‘testing28$’
-} |
-|'authent/login/' |  POST  |    | Add the data for authenticating an user.
-{email: testing@gmail.com,
-password: testing28$}  |
-
-|'ai/input' | POST  |   |  Add the data that will be processed by OpenAI API		
-{input: ‘’Steps for obtaining a Canadian visitor visa”} |
-
-|'ai/output/' |	GET  |   | Retrieve the response from OpenAI API		
-{output: The steps for … (OpenAI API text generated)}|
-
-|'ai/output/save/:id' |	POST  |  Header Parameters (this endpoint requires tokens on the header) |  Add the OpenAI API response data to the MongoDB database, adding a date timestamp and an id identification that matches the authenticated user		
-{id: 1,
-date: 25/2/2024,
-output: The steps for … (OpenAI API text generated)} |
-
-|'history/:id' | GET  |  Header Parameters (this endpoint requires tokens on the header) | Retrieve the user related data from MongoDB, 3 data entry at the time		
-[{date: 25/2/2024,
-output: The steps for … (OpenAI API text generated)},
-{date: 26/2/2024,
-output: The steps for … (OpenAI API text generated)}
-{date: 27/2/2024,
-output: The steps for … (OpenAI API text generated)}
-] |
-|history/:id/download |	GET  |  Header Parameters (this endpoint requires tokens on the header) |
-Download the previous
-[{date: 25/2/2024,
-output: The steps for … (OpenAI API text generated)},
-{date: 26/2/2024,
-output: The steps for … (OpenAI API text generated)}
-{date: 27/2/2024,
-output: The steps for … (OpenAI API text generated)}
-] |
+|'authent/sign-up/'|	POST |     | {id: 1, username: ‘master28’, email: testing@gmail.com, password: ‘testing28$’} |	
+|'authent/login/' |  POST  |    | {email: testing@gmail.com, password: testing28$}  |
+|'ai/input' | POST  |   | {input: ‘’Steps for obtaining a Canadian visitor visa”} |
+|'ai/output/' |	GET  |   | {output: The steps for … (OpenAI API text generated)}|
+|'ai/output/save/:id' |	POST  |  Header Parameters (this endpoint requires tokens on the header) |  {id: 1, date: 25/2/2024, output: The steps for … (OpenAI API text generated)} |
+|'history/:id' | GET  |  Header Parameters (this endpoint requires tokens on the header) | [{date: 25/2/2024, output: The steps for … (OpenAI API text generated)}, {date: 26/2/2024, output: The steps for … (OpenAI API text generated)}] |
+|history/:id/download |	GET  |  Header Parameters (this endpoint requires tokens on the header) | [{date: 25/2/2024, output: The steps for … (OpenAI API text generated)}, {date: 26/2/2024, output: The steps for … (OpenAI API textgenerated)}]  |
 
 
 | React Routes | Related Page |
 |--------------|--------------|
 |‘/’| Home Page |
-
 |‘/signup’|	Signup Page |
-
 |‘/login’  |	Login Page |
-
 |‘/aiassistance’ |	AI Assistance Page |
-
 |‘/educational’	| Educational Page |
 
 
