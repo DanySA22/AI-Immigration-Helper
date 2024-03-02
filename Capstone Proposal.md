@@ -60,12 +60,12 @@ On the same page, users will find links to website sources with educational purp
 
 I will be using the MERN stack as the core and adding technologies on top of that.
 
-Styling: Sass
-Client-Side functionality: React.js, Axios library
-Server-side functionality:  Node.js, Express.js
-Database: MySQL (SQL), MongoDB (NoSQL), Knex.js (query builder), Mongoose (ODM)
-Authentication: Passport.js
-External APIs: OpenAI API, Google Map API (under nice to have)
++ Styling: Sass
++ Client-Side functionality: React.js, Axios library
++ Server-side functionality:  Node.js, Express.js
++ Database: MySQL (SQL), MongoDB (NoSQL), Knex.js (query builder), Mongoose (ODM)
++ Authentication: Passport.js
++ External APIs: OpenAI API, Google Map API (under nice to have)
 
 
 ### APIs
@@ -74,22 +74,26 @@ I will be using OpenAI API to generate output/answers to users requesting inputs
 
 ### Sitemap
 
-Home Page
+***Home Page***
+
 It will be the landing page, the first page that the user will have contact with.  It will have a hero section with an image and a short sentence/title descriptive of what this app is about.  Have a description section with 2 or 3 paragraphs about why this project and how can it be useful for users. Have another section where some sort of animation or image or something engaging in general and with a button that will connect to the AI Assistance page.
 
-Signup Page
+***Signup Page***
+
 The signup page will have a signup form for user registration.
 
-Login Page
+***Login Page***
+
 The login page will have a login form for user authentication. It will also include the Google logo for the sign-up connection.
 
-AI Assistance Page
+***AI Assistance Page***
+
 This page will contain three main sections: input, output, and history. Input will look like a regular form with a text area. The spaces where the output and history return will look like text area boxes as well.
 
-Educational Page
+***Educational Page***
 This page will contain two main sections the first with Best Practice Information with a descriptive set of paragraphs. The other section will include a list of organized links to relevant sources of educational websites (this will include BrainStation deployed alumni relevant apps and not BrainStation relevant apps). If I reach to do nice to have, I will add below an image and Immigration advisor links
 
-Each page will include a nav and footer component. The nav will include the logo and the navigation bar. The footer will include ways of contacting the creator of the app, it also will repeat the disclaimer about the educational/informational process of this website and the need to always check the official Canadian government website and authorities for confirmation before taking any legal action.
+**Each page will include a nav and footer component.** The nav will include the logo and the navigation bar. The footer will include ways of contacting the creator of the app, it also will repeat the disclaimer about the educational/informational process of this website and the need to always check the official Canadian government website and authorities for confirmation before taking any legal action.
 
 
 ### Mockups
@@ -164,36 +168,44 @@ React Routes	Related Page
 
 The app will include JSON Web Token Authentication as well as OAuth 2.0 with Google.
 
-JSON Web Token Authentication
+***JSON Web Token Authentication*** 
+
 Using the Passport.js library as middleware on the Node.js/Express.js app
 It will include a sign-up page that will collect to the MySQL database-relevant data from the user. Then the user will be redirected to a log-in page where authentication credentials will be checked -form validation included- to authenticate and obtain a JSON web token for access to those app functionalities that require it.
 
-Oauth 2.0 with Google
+***Oauth 2.0 with Google***
+
 Using the Passport.js library as middleware on the Node.js/Express.js app
 It will include the Google logo for sign-up connection on the same page as the login form.
 
-App functionalities that require authentication:
-•	Save the GPT output data.
-•	Recover the user history and all the features that came with it like filtering and downloading this user history information.
+***App functionalities that require authentication:***
+
+  + Save the GPT output data.
+  + Recover the user history and all the features that came with it like filtering and downloading this user history information.
 
 
 ## Roadmap
 
-Sprint 1 Tasks
+**Sprint 1 Tasks**
+
 Estimated time: 15h
-Creating the React app Functional Component and Pages with the basic structure and basic layout styling.
-•	Create Git local repo main and three sprints’ branches.
-•	Add React Router and organize pages and components inside pages.
-•	Add a basic layout styling following the mockups.
-•	Organize the folder structure tree following best practices.
+
+<u>Creating the React app Functional Component and Pages with the basic structure and basic layout styling.</u>
+
+  + Create Git local repo main and three sprints’ branches.
+  + Add React Router and organize pages and components inside pages.
+  + Add a basic layout styling following the mockups.
+  + Organize the folder structure tree following best practices.
+
 Create an Express app with the basic structure of the folder and the functionalities for storing data in the Database.
 •	Create Git local repo main and three sprints’ branches.
-•	Create an express app and organize the folder following best practices and convenience: this includes folders for Routes, Models, and Controllers files. Organize the import/export flow conveniently.
+•	Create an express app and organize the folder following best practices and convenience: this  includes folders for Routes, Models, and Controllers files. Organize the import/export flow conveniently.
 •	Add the necessary drives to use MySQL and MongoDB databases.
 •	On the folder for models (database tables information) create files where you define a connection with MySQL Database and create tables according with design. Use Knex.js for this.  
 •	On the same folder create a connection with MongoDB using Mongoose
 
-Sprint 2 Tasks
+**Sprint 2 Tasks**
+
 Estimated time: 30h.
 Adding frontend needed functionality. 
 •	Setting necessary props, hooks (tentatively will be useState, useEffect, useParams), and event listeners.
