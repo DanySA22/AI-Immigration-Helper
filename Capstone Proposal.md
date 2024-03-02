@@ -8,7 +8,7 @@ This app is an Artificial Intelligence assistant for Canadian immigration legal 
 
 ### Problem
 
-Canada and our city Vancouver are built of immigrants and the number of new immigrants every year is high. Many, even when they are here, still need to do immigration processes for their status in Canada or to help family members.
+Canada, and our city Vancouver, are built of immigrants and the number of new immigrants every year is high. Many, even when they are here, still need to do immigration processes for their status in Canada or to help family members.
 
 They face a long search, organization, and document collection to do those immigration processes, many times even without understanding well English/French, or the technical words, or the technicalities required in those immigration processes; all this at the same time where they are working or adapting to their new Canadian context!
 
@@ -16,20 +16,22 @@ My Cuban friend passed for this, and I want to help people like him in the futur
 
 Considering all this, here is a list of benefits that this app could provide:
 
-Simplify, speed up, and make more effective the immigration process preparation:
-Users can rapidly obtain overall information on how certain Canadian immigration processes work (even up-to-date processes because the OpenAI API version that I want to use for the project can currently search the internet)
-Can diminish the language barrier for properly understanding the processes: users can input in their languages and can request the answer in their languages as well.
-Help to speed the understanding of more complicated technical documents and information: if users have documentation that they don't clearly understand (for the technical words and because of the language barrier) it can be uploaded as input, and they can obtain a summary of the main ideas on English/French or in their language.
- If authenticated users can save the data that find relevant, and they can access it anytime. They can filter all this information that they obtain and decide what is the most relevant for them and download it as a document.
+_Simplify, speed up, and make more effective the immigration process preparation:_
+   + **Users can rapidly obtain overall information on how certain Canadian immigration processes work** (even up-to-date processes because the OpenAI API version that I want to use for the project can currently search the internet)
 
- We have an educational goal not only informational:
-The website will have also a page with information on best practices on how to search the Canada Government Immigration Website to improve internet literacy considering that even when the user can use this assistance app they need to go to that page as the reference and confirmation page.  Also, better they understand how the Canadian Government Immigration Website works more efficiently they can use this assistance app.
-That same page will have a section that will have links to other educational sites that could be relevant:  citizenship study, language study link page.  This will include BrainStation deployed alumni-relevant apps -as a way to promote awesome related works from fellow past students- after they agree to this and not BrainStation-relevant apps.
+   + **Can diminish the language barrier** for properly understanding the processes: users can input in their languages and can request the answer in their languages as well.
+   + **Help to speed the understanding of more complicated technical documents and information:** if users have documentation that they don't clearly understand (for the technical words and because of the language barrier) it can be uploaded as input, and they can obtain a summary of the main ideas on English/French or in their language.
+   + **If authenticated users can save the data that find relevant**, and they can access it anytime. They can filter all this information that they obtain and decide what is the most relevant for them and download it as a document.
 
-Makes the stressful and draining immigration process a bit less daunting and more connected:
+_We have an educational goal not only informational:_
+   + The website will have also a page with **information on best practices on how to search the Canada Government Immigration Website to improve internet literacy** considering that even when the user can use this assistance app they need to go to that page as the reference and confirmation page.  Also, better they understand how the Canadian Government Immigration Website works more efficiently they can use this assistance app.
+   + That same page will have a section that will have **links to other educational sites that could be relevant:  citizenship study, language study link page.**  This will include BrainStation deployed alumni-relevant apps -as a way to promote awesome related works from fellow past students- after they agree to this and not BrainStation-relevant apps.
 
-The gpt will be customized to have a casual (but informative) way to communicate to try to engage/connect more with the audience on an already stressful topic for many users. 
-Having information from the Internet is many times, not enough to dissipate doubts and insecurities about our immigration processes. Considering that I would like to add a section on the Educational page on the app where users can select immigration advisors’ offices where they can have that necessary face-to-face human interaction. The app facilitates this process by adding Google Maps API making sure that after the users select what office want to go to, they will get the location, how to get there, and contact info of the advisor office website.  I would like to add also the languages that are spoken by the advisors in those offices other than English and French because if users find advice in their languages and maybe from someone with a similar cultural background may improve the connection feeling, the understanding of the process and reduce stress. This will be a benefit as a result of a nice-to-have feature.
+_Makes the stressful and draining immigration process a bit less daunting and more connected:_
+
+  + **The gpt will be customized to have a casual (but informative) way to communicate** to try to engage/connect more with the audience on an already stressful topic for many users. 
+
+  + Having information from the Internet is many times, not enough to dissipate doubts and insecurities about our immigration processes. Considering that **I would like to add a section on the Educational page on the app where users can select immigration advisors’ offices where they can have that necessary face-to-face human interaction**. The app facilitates this process by adding Google Maps API making sure that after the users select what office want to go to, they will get the location, how to get there, and contact info of the advisor office website.  I would like to add also the languages that are spoken by the advisors in those offices other than English and French because if users find advice in their languages and maybe from someone with a similar cultural background may improve the connection feeling, the understanding of the process and reduce stress. ***This will be a benefit as a result of a nice-to-have feature.***
 
 
 ### User Profile
@@ -57,6 +59,7 @@ On the same page, users will find links to website sources with educational purp
 ### Tech Stack
 
 I will be using the MERN stack as the core and adding technologies on top of that.
+
 Styling: Sass
 Client-Side functionality: React.js, Axios library
 Server-side functionality:  Node.js, Express.js
@@ -236,7 +239,7 @@ D.	set that the information came from a certain endpoint when a clicking event h
 
 
 
-## Nice-to-haves
+## Nice-to-have
 
 
 Adding that extra section on the Educational Page where users can select immigration advisors’ offices where they can have that necessary face-to-face human interaction will be nice to have:
