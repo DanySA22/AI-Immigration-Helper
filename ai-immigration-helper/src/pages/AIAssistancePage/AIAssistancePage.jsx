@@ -8,7 +8,8 @@ function AiAssistance () {
     const [userinput, setUserInput] = useState('')
     const [aioutput, setAiOutput] = useState('')
     const [history, setHistory] = useState('')
-    
+    const [searchInput, setSearchInput] = useState('')
+    const [filteredData, setFilteredData] = useState(history)
 
 const inputFromUser = (event) => {
         setUserInput(event.target.value)
@@ -69,8 +70,9 @@ const historyRetrieve = (event) => {
 try {
     const historyRetrieve = async () => {
     const userHistory = await axios.get('http://localhost:8080/history/:id')
-    setHistory(userHistory.data)
-      
+    setHistory(userHistory.data)  
+    //userHistory.data is an array of objects where each object has date and OpenAIOutput to be displayed
+    //data in a format where I get month, day, year only  
     }
 
     historyRetrieve()
@@ -93,7 +95,23 @@ const donwloadToPDF = () =>{
         console.error('Error downloading the data to pdf:', error)
     } 
 }
-    return (
+
+
+//search functionality
+
+const inputtoSearch = (event) => {
+    setSearchInput(event.target.value)   
+}
+
+const filterUserHistory = () => {
+      const searchResults = history.filter(item => 
+        item.toLowerCase().includes(searchInput.toLowerCase())
+        ) //from the history that is an array of objects I am filtering taking the items that include the search 
+        //input. This is great because allow me include in the initial retrieve all the outcomes related to an user
+       setFilteredData(searchResults)
+}
+
+return (
         <>
         <div className='user-input'>
             <h3 className='user-input__header'> How can we help you with Immigration processes?</h3>
@@ -122,10 +140,16 @@ const donwloadToPDF = () =>{
             <div className='history__request'>
             <button className='history__button' onClick={historyRetrieve}>See History</button>
             <button className='history__download' onClick={donwloadToPDF}>Download Document</button>
-            <input type="text"  placeholder='Search...' className='history__search'/>
+            <input type="text"  placeholder='Search...' onChange={event => inputtoSearch(event)} className='history__search-Input'/>
+            <button className='history__search-Button' onClick={filterUserHistory}></button>
             </div>
             <div className='history__Information'>
-                <p className='history__Text'> This will contain the user Saved Information retrieve data {history}</p>
+                {filteredData.map(item => (
+                <div className='history__Text-Subdiv' key={item.id}>
+                <p className='history__Text-Date'> {item.date}</p>
+                <p className='history__Text-Content'> {item.openAiOutput}</p>
+                </div> 
+                ))}
             </div>
         </div>
         </>
