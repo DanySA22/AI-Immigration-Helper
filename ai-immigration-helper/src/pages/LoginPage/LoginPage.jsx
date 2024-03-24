@@ -34,8 +34,10 @@ const submitResult = (event) => {
         console.log(body)
         const newUser = await axios.post('http://localhost:8080/authent/login', body)
         setUsername('')
-        setPassword('')
-        
+        setPassword('') 
+        const tokenObject = JSON.stringify(newUser.data)
+        localStorage.setItem('user Token:', tokenObject)
+       
     }
 
     loginFormPost()

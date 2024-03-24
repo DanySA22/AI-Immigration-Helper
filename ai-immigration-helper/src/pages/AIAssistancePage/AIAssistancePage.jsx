@@ -1,7 +1,7 @@
 import axios from 'axios';
 import {useState, useEffect} from 'react'  
 import {useParams} from 'react-router-dom' 
-import {jsPDF} from 'jspdf'
+import {jsPDF} from 'jspdf'  
 
 
 function AiAssistance () {
@@ -9,7 +9,22 @@ function AiAssistance () {
     const [aioutput, setAiOutput] = useState('')
     const [history, setHistory] = useState('')
     const [searchInput, setSearchInput] = useState('')
-    const [filteredData, setFilteredData] = useState(history)
+    // const [filteredData, setFilteredData] = useState(history)
+
+//adding an Axios interceptor for including the JWT on the header of the request
+
+
+axios.interceptors.request.use( (config) => {
+      const token = localStorage.getItem('user Token:')
+      if (token) {
+        const tokenObject = JSON.parse(token)
+        config.headers.Authorization = `Bearer ${tokenObject.token}`
+      }
+      console.log(config)
+      return config
+}, (error) => {
+    console.log(error)
+})
 
 const inputFromUser = (event) => {
         setUserInput(event.target.value)
@@ -18,7 +33,7 @@ const submitInput = (event) => {
     event.preventDefault()
     if(!userinput) {
             alert('You need to make a request or question first')
-            return
+            return  
     }
     try {
         const UserInputPost = async () => {
@@ -38,7 +53,7 @@ const submitInput = (event) => {
         }
     }
 
-const saveOutput = (event) => {
+const saveOutput = () => {
     if(!aioutput) {
         alert('You need to wait for an AI answer before you can save the information')
         return
@@ -46,11 +61,11 @@ const saveOutput = (event) => {
 try {
     const aiOutputCreate = async () => {
     const body = {
-            // userId: id (of authenticated user) it will depend on the authentication system
-            openAIOutput: aioutput
+           userId: 1,
+           openAiOutput: aioutput
         }
     console.log(body)
-    const savedAnswer = await axios.post('http://localhost:8080/ai/output/save/:id', body)
+    const savedAnswer = await axios.post('http://localhost:8080/ai/output/save', body)
     setAiOutput('')
       
     }
@@ -63,19 +78,20 @@ try {
 }
 
 const historyRetrieve = (event) => {
-    if(!history) {
-        alert('You need to authenticat as an user and save the data before you can retrieve the information')
-        return
-}
+//     if(!history) {
+//         alert('You need to authenticat as an user and save the data before you can retrieve the information')
+//         return
+// }
 try {
-    const historyRetrieve = async () => {
-    const userHistory = await axios.get('http://localhost:8080/history/:id')
-    setHistory(userHistory.data)  
+    const historyUserRetrieve = async () => {
+    const userHistory = await axios.get('http://localhost:8080/history')
+    setHistory(JSON.stringify(userHistory.data))  
     //userHistory.data is an array of objects where each object has date and OpenAIOutput to be displayed
     //data in a format where I get month, day, year only  
+    console.log(history)
     }
 
-    historyRetrieve()
+    historyUserRetrieve()
     } catch (error) {
         console.error('Error submitting the form:', error)
     }
@@ -108,7 +124,7 @@ const filterUserHistory = () => {
         item.toLowerCase().includes(searchInput.toLowerCase())
         ) //from the history that is an array of objects I am filtering taking the items that include the search 
         //input. This is great because allow me include in the initial retrieve all the outcomes related to an user
-       setFilteredData(searchResults)
+    //    setFilteredData(searchResults)
 }
 
 return (
@@ -127,7 +143,7 @@ return (
                 <div>
                   {aioutput}
                 </div>
-                <button onClick={event => saveOutput(event)}> Submit </button>
+                <button onClick={saveOutput}> Save this answer </button>
             </div>
             <form action="" className='ai-output-form'>
                 <textarea name="" id="" cols="30" rows="10" className='ai-output-form__Text'></textarea>
@@ -144,12 +160,13 @@ return (
             <button className='history__search-Button' onClick={filterUserHistory}></button>
             </div>
             <div className='history__Information'>
-                {filteredData.map(item => (
+                {history}
+                {/* {filteredData.map(item => (
                 <div className='history__Text-Subdiv' key={item.id}>
                 <p className='history__Text-Date'> {item.date}</p>
                 <p className='history__Text-Content'> {item.openAiOutput}</p>
                 </div> 
-                ))}
+                ))} */}
             </div>
         </div>
         </>
