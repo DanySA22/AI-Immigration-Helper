@@ -7,10 +7,12 @@ import {jsPDF} from 'jspdf'
 function AiAssistance () {
     const [userinput, setUserInput] = useState('')
     const [aioutput, setAiOutput] = useState('')
-    const [history, setHistory] = useState('')
+    const [history, setHistory] = useState([])
     const [searchInput, setSearchInput] = useState('')
-    // const [filteredData, setFilteredData] = useState(history)
+    const [filteredData, setFilteredData] = useState(history)
 
+    console.log(history)
+    console.log(filteredData)
 //adding an Axios interceptor for including the JWT on the header of the request
 
 
@@ -20,7 +22,7 @@ axios.interceptors.request.use( (config) => {
         const tokenObject = JSON.parse(token)
         config.headers.Authorization = `Bearer ${tokenObject.token}`
       }
-      console.log(config)
+      
       return config
 }, (error) => {
     console.log(error)
@@ -40,7 +42,7 @@ const submitInput = (event) => {
         const body = {
                 question: userinput
             }
-        console.log(body)
+        
         const newQuestion = await axios.post('http://localhost:8080/ai/input', body)
         
         setUserInput('')
@@ -64,7 +66,7 @@ try {
            userId: 1,
            openAiOutput: aioutput
         }
-    console.log(body)
+    
     const savedAnswer = await axios.post('http://localhost:8080/ai/output/save', body)
     setAiOutput('')
       
@@ -85,10 +87,12 @@ const historyRetrieve = (event) => {
 try {
     const historyUserRetrieve = async () => {
     const userHistory = await axios.get('http://localhost:8080/history')
-    setHistory(JSON.stringify(userHistory.data))  
+    setHistory(userHistory.data)  
+    setFilteredData(userHistory.data)
     //userHistory.data is an array of objects where each object has date and OpenAIOutput to be displayed
     //data in a format where I get month, day, year only  
-    console.log(history)
+    
+    console.log(userHistory.data)
     }
 
     historyUserRetrieve()
@@ -97,16 +101,33 @@ try {
     }
 
 }
+console.log(filteredData)
+const formatforText = filteredData.map(item => ({
+    saved_on: item.date,
+    aioutput: item.openAiOutput,
+}))
+console.log(formatforText)
 
 //download functionality
-const donwloadToPDF = () =>{
+const downloadToPDF = () =>{
     try {
         const newPDF = () => {
-            const document = new jsPDF()
-            document.setFontSize(10)
-            document.text(document.splitTextToSize(history, 180), 10, 30)
-            document.save('New PDF')
+            // const documentPDF = new jsPDF()
+            // documentPDF.setFontSize(10)
+            console.log(filteredData)
+            const formatforText = filteredData.map(item => ({
+                saved_on: item.date,
+                aioutput: item.openAiOutput,
+            }))
+            console.log(formatforText)
+            // const documentContent = JSON.stringify(formatforText)
+            // const splitText = documentPDF.splitTextToSize(documentContent, 180)
+            // documentPDF.text(splitText, 10, 30)
+            // documentPDF.save('New PDF.pdf')
+           
         }
+        newPDF()
+        
     } catch (error) {
         console.error('Error downloading the data to pdf:', error)
     } 
@@ -117,14 +138,16 @@ const donwloadToPDF = () =>{
 
 const inputtoSearch = (event) => {
     setSearchInput(event.target.value)   
+    
 }
 
 const filterUserHistory = () => {
       const searchResults = history.filter(item => 
-        item.toLowerCase().includes(searchInput.toLowerCase())
+        item.openAiOutput.toLowerCase().includes(searchInput.toLowerCase())
         ) //from the history that is an array of objects I am filtering taking the items that include the search 
         //input. This is great because allow me include in the initial retrieve all the outcomes related to an user
-    //    setFilteredData(searchResults)
+       setFilteredData(searchResults)
+    console.log(searchResults)
 }
 
 return (
@@ -155,18 +178,25 @@ return (
             <h3 className='history__header'>Your Saved Information</h3>
             <div className='history__request'>
             <button className='history__button' onClick={historyRetrieve}>See History</button>
-            <button className='history__download' onClick={donwloadToPDF}>Download Document</button>
+            <button className='history__download' onClick={downloadToPDF}>Download Document</button>
             <input type="text"  placeholder='Search...' onChange={event => inputtoSearch(event)} className='history__search-Input'/>
             <button className='history__search-Button' onClick={filterUserHistory}></button>
             </div>
             <div className='history__Information'>
-                {history}
-                {/* {filteredData.map(item => (
+                
+                {/* {history.map(item => (
+                <div className='history__Text-Subdiv' key={item.id}>
+                <p className='history__Text-Date'> {item.date} </p>
+                 Add the utility for display the date in a more user friendly format 
+                <p className='history__Text-Content'> {item.openAiOutput}</p>
+                </div> 
+                ))}  */}
+                {filteredData.map(item => (
                 <div className='history__Text-Subdiv' key={item.id}>
                 <p className='history__Text-Date'> {item.date}</p>
                 <p className='history__Text-Content'> {item.openAiOutput}</p>
                 </div> 
-                ))} */}
+                ))}
             </div>
         </div>
         </>
