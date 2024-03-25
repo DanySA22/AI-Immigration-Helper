@@ -68,6 +68,9 @@ try {
         }
     
     const savedAnswer = await axios.post('http://localhost:8080/ai/output/save', body)
+    if (savedAnswer.status == 401) {
+        alert('You need to authenticate as an user to save data')
+    }
     setAiOutput('')
       
     }
