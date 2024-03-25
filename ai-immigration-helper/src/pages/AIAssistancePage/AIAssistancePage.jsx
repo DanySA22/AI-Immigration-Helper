@@ -1,8 +1,8 @@
 import axios from 'axios';
-import {useState, useEffect} from 'react'  
+import {useState, useEffect, useRef} from 'react'  
 import {useParams} from 'react-router-dom' 
 import {jsPDF} from 'jspdf'  
-
+import html2canvas from 'html2canvas'
 
 function AiAssistance () {
     const [userinput, setUserInput] = useState('')
@@ -15,7 +15,7 @@ function AiAssistance () {
     console.log(filteredData)
 //adding an Axios interceptor for including the JWT on the header of the request
 
-
+const contentRef = useRef(null)
 axios.interceptors.request.use( (config) => {
       const token = localStorage.getItem('user Token:')
       if (token) {
@@ -111,15 +111,42 @@ console.log(formatforText)
 //download functionality
 const downloadToPDF = () =>{
     try {
-        const newPDF = () => {
+        const newPDF = async () => {
+        const input = contentRef.current
+        const canvas = await html2canvas(input)
+        const imgPdf = canvas.toDataURL('image/png')
+        const documentPDF = new jsPDF()
+
+        const pageWidth = documentPDF.internal.pageSize.getWidth();
+        const pageHeight = documentPDF.internal.pageSize.getHeight();
+        const xPosition = 10; // Adjust as necessary
+        const yPosition = 20; // Adjust as necessary
+        const imgWidth = 180; // Example width
+        const imgHeight = 120;
+
+        if (xPosition + imgWidth > pageWidth) {
+            imgHeight *= (pageWidth - xPosition) / imgWidth;
+            imgWidth = pageWidth - xPosition;
+        }
+
+        if (yPosition + imgHeight > pageHeight) {
+            const availableHeight = pageHeight - yPosition
+            const aspectRatio = imgWidth / imgHeight
+            imgHeight = availableHeight;
+            imgWidth = imgHeight * aspectRatio
+        }
+        
+
+        documentPDF.addImage(imgPdf, 'PNG', xPosition, yPosition, imgWidth, imgHeight)
+        documentPDF.save('New Pdf.pdf')
             // const documentPDF = new jsPDF()
             // documentPDF.setFontSize(10)
-            console.log(filteredData)
-            const formatforText = filteredData.map(item => ({
-                saved_on: item.date,
-                aioutput: item.openAiOutput,
-            }))
-            console.log(formatforText)
+            // console.log(filteredData)
+            // const formatforText = filteredData.map(item => (
+            //     item.date,
+            //     item.openAiOutput,
+            // ))
+            // console.log(formatforText)
             // const documentContent = JSON.stringify(formatforText)
             // const splitText = documentPDF.splitTextToSize(documentContent, 180)
             // documentPDF.text(splitText, 10, 30)
@@ -182,7 +209,7 @@ return (
             <input type="text"  placeholder='Search...' onChange={event => inputtoSearch(event)} className='history__search-Input'/>
             <button className='history__search-Button' onClick={filterUserHistory}></button>
             </div>
-            <div className='history__Information'>
+            <div className='history__Information' ref={contentRef}>
                 
                 {/* {history.map(item => (
                 <div className='history__Text-Subdiv' key={item.id}>
@@ -190,7 +217,7 @@ return (
                  Add the utility for display the date in a more user friendly format 
                 <p className='history__Text-Content'> {item.openAiOutput}</p>
                 </div> 
-                ))}  */}
+                ))} */}
                 {filteredData.map(item => (
                 <div className='history__Text-Subdiv' key={item.id}>
                 <p className='history__Text-Date'> {item.date}</p>
