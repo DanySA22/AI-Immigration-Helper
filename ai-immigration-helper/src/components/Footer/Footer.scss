@@ -1,0 +1,43 @@
+@use '../../styles/partials/global' as *;
+@use '../../styles/partials/variables' as *;   
+@use '../../styles/partials/fonts' as *;
+@import '../../styles/partials/mixins';
+
+
+.disclaimer {
+    @include responsiveness('tablet') {
+    }
+    @include responsiveness('desktop') { 
+    }
+    &__header{
+        @include responsiveness('tablet') {
+        }
+        @include responsiveness('desktop') { 
+        }
+    }
+    &__Text{
+        @include responsiveness('tablet') {
+        }
+        @include responsiveness('desktop') { 
+        }
+    }
+}
+
+.contact{
+    @include responsiveness('tablet') {
+    }
+    @include responsiveness('desktop') { 
+    }
+    &__Link{
+        @include responsiveness('tablet') {
+        }
+        @include responsiveness('desktop') { 
+        }
+    }
+    &__icon{
+        @include responsiveness('tablet') {
+        }
+        @include responsiveness('desktop') { 
+        }
+    }
+}

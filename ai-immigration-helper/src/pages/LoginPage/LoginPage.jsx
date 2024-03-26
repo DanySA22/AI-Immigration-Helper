@@ -57,7 +57,7 @@ const submitResult = (event) => {
             <input type="text" className='login-form__input' name='username' value={username} onChange={event => inputUsername(event)}/>
             <label className='login-form__label'> Password </label>
             <input type="password" className='login-form__input' name='password' value={password} onChange={event => inputPassword(event)}/>
-            <input type="submit" />
+            <input type="submit" className='login-form__submit' />
             </form>
             <div className='separation'>
                 <div className='separation__lines'></div>

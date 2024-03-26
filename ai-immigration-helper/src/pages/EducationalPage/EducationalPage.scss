@@ -1,0 +1,70 @@
+@use '../../styles/partials/global' as *;
+@use '../../styles/partials/variables' as *;   
+@use '../../styles/partials/fonts' as *;
+@import '../../styles/partials/mixins';
+
+
+
+.best-practices{
+    @include responsiveness('tablet') {
+    }
+    @include responsiveness('desktop') { 
+    }
+    &__Header{
+        @include responsiveness('tablet') {
+        }
+        @include responsiveness('desktop') { 
+        }
+    }
+    &__Content{
+        @include responsiveness('tablet') {
+        }
+        @include responsiveness('desktop') { 
+        }
+    }
+    &__Text{
+        @include responsiveness('tablet') {
+        }
+        @include responsiveness('desktop') { 
+        }
+    }
+}
+
+.education{
+    @include responsiveness('tablet') {
+    }
+    @include responsiveness('desktop') { 
+    }
+    &__subdivision{
+        @include responsiveness('tablet') {
+        }
+        @include responsiveness('desktop') { 
+        }
+    }
+    &__image{
+        @include responsiveness('tablet') {
+        }
+        @include responsiveness('desktop') { 
+        }
+    }
+
+}
+
+.education-links{
+    @include responsiveness('tablet') {
+    }
+    @include responsiveness('desktop') { 
+    }
+    &__Header{
+        @include responsiveness('tablet') {
+        }
+        @include responsiveness('desktop') { 
+        }
+    }
+    &__Link{
+        @include responsiveness('tablet') {
+        }
+        @include responsiveness('desktop') { 
+        }
+    }
+}

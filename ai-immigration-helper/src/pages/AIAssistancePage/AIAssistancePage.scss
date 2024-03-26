@@ -1,0 +1,135 @@
+@use '../../styles/partials/global' as *;
+@use '../../styles/partials/variables' as *;   
+@use '../../styles/partials/fonts' as *;
+@import '../../styles/partials/mixins';
+
+
+.user-input{
+    @include responsiveness('tablet') {
+    }
+    @include responsiveness('desktop') { 
+    }
+    &__header{
+        @include responsiveness('tablet') {
+        }
+        @include responsiveness('desktop') { 
+        }
+    }
+}
+
+.form {
+    @include responsiveness('tablet') {
+    }
+    @include responsiveness('desktop') { 
+    }
+    &__input {
+        @include responsiveness('tablet') {
+        }
+        @include responsiveness('desktop') { 
+        }
+    }
+    &__Submit{
+        @include responsiveness('tablet') {
+        }
+        @include responsiveness('desktop') { 
+        }
+    }
+}
+
+.ai-output{
+    @include responsiveness('tablet') {
+    }
+    @include responsiveness('desktop') { 
+    }
+    &__header{
+    @include responsiveness('tablet') {
+    }
+    @include responsiveness('desktop') { 
+    }}
+    &__subdivision{
+        @include responsiveness('tablet') {
+        }
+        @include responsiveness('desktop') { 
+        }
+    }
+    &__Text{
+        @include responsiveness('tablet') {
+        }
+        @include responsiveness('desktop') { 
+        }
+    }
+    &__Save{
+        @include responsiveness('tablet') {
+        }
+        @include responsiveness('desktop') { 
+        }
+    }
+
+}
+
+.history{
+    @include responsiveness('tablet') {
+    }
+    @include responsiveness('desktop') { 
+    }
+    &__header{
+        @include responsiveness('tablet') {
+        }
+        @include responsiveness('desktop') { 
+        }
+    }
+    &__request{
+        @include responsiveness('tablet') {
+        }
+        @include responsiveness('desktop') { 
+        }
+    }
+    &__button{
+        @include responsiveness('tablet') {
+        }
+        @include responsiveness('desktop') { 
+        }
+    }
+    &__download{
+        @include responsiveness('tablet') {
+        }
+        @include responsiveness('desktop') { 
+        }
+    }
+    &__search-input{
+        @include responsiveness('tablet') {
+        }
+        @include responsiveness('desktop') { 
+        }
+    }
+    &__search-Button{
+        @include responsiveness('tablet') {
+        }
+        @include responsiveness('desktop') { 
+        }
+    }
+    &__Information{
+        @include responsiveness('tablet') {
+        }
+        @include responsiveness('desktop') { 
+        }
+    }
+    &__Text-Subdiv{
+        @include responsiveness('tablet') {
+        }
+        @include responsiveness('desktop') { 
+        }
+    }
+    &__Text-Date{
+        @include responsiveness('tablet') {
+        }
+        @include responsiveness('desktop') { 
+        }
+    }
+    &__Text-Content{
+        @include responsiveness('tablet') {
+        }
+        @include responsiveness('desktop') { 
+        }
+    }
+}

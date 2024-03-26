@@ -1,5 +1,34 @@
+@use '../../styles/partials/global' as *;
+@use '../../styles/partials/variables' as *;   
+@use '../../styles/partials/fonts' as *;
+@import '../../styles/partials/mixins';
+
 .header{
-    &__logo{}
-    &__Link{}
+
+    @include responsiveness('tablet') {
+    }
+    @include responsiveness('desktop') { 
+    }
+    &__logo{
+
+        @include responsiveness('tablet') {
+        }
+        @include responsiveness('desktop') { 
+        }
+    }
+    &__image{
+
+        @include responsiveness('tablet') {
+        }
+        @include responsiveness('desktop') { 
+        }
+    }
+    &__Link{
+
+        @include responsiveness('tablet') {
+        }
+        @include responsiveness('desktop') { 
+        }
+    }
     
 }

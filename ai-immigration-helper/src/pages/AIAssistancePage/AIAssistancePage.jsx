@@ -185,24 +185,18 @@ return (
         <div className='user-input'>
             <h3 className='user-input__header'> How can we help you with Immigration processes?</h3>
             <form action="" className='form' onSubmit={event => submitInput(event)}>
-                <textarea className='form__Text' name="" id="" cols="30" rows="10" onChange={event => inputFromUser(event)}></textarea>
-                <input className='form__file-Upload'type="file" />
+                <textarea className='form__input' name="" id="" cols="30" rows="10" onChange={event => inputFromUser(event)}></textarea>
                 <input className='form__Submit'type="submit" />
             </form>
         </div>
         <div className='ai-output'>
             <h3 className='ai-output__header'> Artificial Intelligence Answer</h3>
-            <div>
-                <div>
+            <div className='ai-output__subdivision'>
+                <div className='ai-output__Text'>
                   {aioutput}
                 </div>
-                <button onClick={saveOutput}> Save this answer </button>
+                <button onClick={saveOutput} className='ai-output__Save'> Save this answer </button>
             </div>
-            <form action="" className='ai-output-form'>
-                <textarea name="" id="" cols="30" rows="10" className='ai-output-form__Text'></textarea>
-                {/* The textarea value attribute could be holding a useState that will include the gpt output answer */}
-                <input type="submit" className='ai-output-form__Submit'/>
-            </form>
         </div>
         <div className='history'>
             <h3 className='history__header'>Your Saved Information</h3>
@@ -214,14 +208,7 @@ return (
             </div>
             <div className='history__Information' ref={contentRef}>
                 
-                {/* {history.map(item => (
-                <div className='history__Text-Subdiv' key={item.id}>
-                <p className='history__Text-Date'> {item.date} </p>
-                 Add the utility for display the date in a more user friendly format 
-                <p className='history__Text-Content'> {item.openAiOutput}</p>
-                </div> 
-                ))} */}
-                {filteredData.map(item => (
+             {filteredData.map(item => (
                 <div className='history__Text-Subdiv' key={item.id}>
                 <p className='history__Text-Date'> {item.date}</p>
                 <p className='history__Text-Content'> {item.openAiOutput}</p>

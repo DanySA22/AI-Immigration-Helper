@@ -8,7 +8,7 @@ function Header () {
     return (
         <>
        <header className="header"> 
-      <NavLink to="/" className='header__logo'><img src= {logo} alt='AI-Immigration-Helper logo' /></NavLink>
+      <NavLink to="/" className='header__logo'><img src= {logo} alt='AI-Immigration-Helper logo' className='header__image'/></NavLink>
       <div>
         <NavLink to="/" className='header__Link'> Home </NavLink>
         <NavLink to="/signup" className='header__Link'> Signup </NavLink>

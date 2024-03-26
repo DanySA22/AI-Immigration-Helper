@@ -61,7 +61,7 @@ const submitResult = (event) => {
             <input type="email" className='signup-form__input' value={email} onChange={event => inputEmail(event)} name='email'/>
             <label className='signup-form__label'> Password </label>
             <input type="password" className='signup-form__input' value={password} onChange={event => inputPassword(event)} name='password'/>
-            <input type="submit" />
+            <input type="submit" className='signup-form__submit' />
             </form>
         </div>
         </>
