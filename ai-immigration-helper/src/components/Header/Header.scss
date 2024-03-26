@@ -8,32 +8,39 @@
    flex-direction:  column;
    justify-content: center;
    align-items: center;
-   border: 2px red solid;
    padding: 1rem 2rem;
+   background-color: $colorB;
+
 
     @include responsiveness('tablet') {
         flex-direction:  row;
         justify-content: space-between;
-
+        padding: 1rem 3rem;
     }
     @include responsiveness('desktop') { 
         flex-direction:  row;
         justify-content: space-between;
+        padding: 1rem 4rem;
     }
     &__logo{
         width: 20%;     
-        border: 2px red solid;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 0.5rem;
         @include responsiveness('tablet') {
+            width: 7%;
         }
         @include responsiveness('desktop') { 
+            width: 7%;
         }
     }
     &__image{
         max-inline-size: 100%;
-        aspect-ratio: 1;
         object-fit: cover;
-        border-radius: 2%;
-        
+        border-radius: 25%;
+                
         @include responsiveness('tablet') {
         }
         @include responsiveness('desktop') { 
@@ -42,25 +49,37 @@
     &__subdivision{
         display: flex;
         flex-direction:  column;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
-
-
+        width: 50%;
+        margin-top: 0.5rem;
         @include responsiveness('tablet') {
             flex-direction: row;
             justify-content: space-between;
+            margin-top: 0;
+            width: 75%;
+
         }
         @include responsiveness('desktop') { 
             flex-direction: row;
             justify-content: space-between;
+            margin-top: 0;
+            width: 75%;
         }
     }
 
     &__Link{
-
+        text-decoration: none;
+        margin-bottom: 0.5rem;
+        color: $colorOrange;
         @include responsiveness('tablet') {
+            margin-bottom: 0;
+            font-size: 2.3vw;
+            
         }
         @include responsiveness('desktop') { 
+            margin-bottom: 0;
+            font-size: 2.3vw;
         }
     }
     
