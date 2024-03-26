@@ -5,6 +5,8 @@
 
 
 .disclaimer {
+    padding: 1rem 2rem;
+
     @include responsiveness('tablet') {
     }
     @include responsiveness('desktop') { 
@@ -24,6 +26,7 @@
 }
 
 .contact{
+    padding: 1rem 2rem;
     @include responsiveness('tablet') {
     }
     @include responsiveness('desktop') { 

@@ -4,25 +4,58 @@
 @import '../../styles/partials/mixins';
 
 .header{
+   display: flex;
+   flex-direction:  column;
+   justify-content: center;
+   align-items: center;
+   border: 2px red solid;
+   padding: 1rem 2rem;
 
     @include responsiveness('tablet') {
+        flex-direction:  row;
+        justify-content: space-between;
+
     }
     @include responsiveness('desktop') { 
+        flex-direction:  row;
+        justify-content: space-between;
     }
     &__logo{
-
+        width: 20%;     
+        border: 2px red solid;
         @include responsiveness('tablet') {
         }
         @include responsiveness('desktop') { 
         }
     }
     &__image{
-
+        max-inline-size: 100%;
+        aspect-ratio: 1;
+        object-fit: cover;
+        border-radius: 2%;
+        
         @include responsiveness('tablet') {
         }
         @include responsiveness('desktop') { 
         }
     }
+    &__subdivision{
+        display: flex;
+        flex-direction:  column;
+        justify-content: center;
+        align-items: center;
+
+
+        @include responsiveness('tablet') {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        @include responsiveness('desktop') { 
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
+
     &__Link{
 
         @include responsiveness('tablet') {
