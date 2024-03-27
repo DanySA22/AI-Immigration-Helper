@@ -16,7 +16,7 @@ function Footer () {
             </p>
         </div>
         <div className='contact'> 
-        <a href="https://www.linkedin.com/in/daniel-savignon-araujo-606194237/" target='_blank' className='contact__Link'> <FontAwesomeIcon icon={faLinkedin} size="2x" className='contact__icon'/></a>
+        <a href="https://www.linkedin.com/in/daniel-savignon-araujo/" target='_blank' className='contact__Link'> <FontAwesomeIcon icon={faLinkedin} size="2x" className='contact__icon'/></a>
         <a href="https://github.com/DanySA22" target='_blank' className='contact__Link'>  <FontAwesomeIcon icon={faGithub} size="2x" className='contact__icon'/> </a>
         <a href="mailto:danielsavignon24@gmail.com" target='_blank' className='contact__Link'> <FontAwesomeIcon icon={faEnvelope} size="2x" className='contact__icon'/></a>
                 

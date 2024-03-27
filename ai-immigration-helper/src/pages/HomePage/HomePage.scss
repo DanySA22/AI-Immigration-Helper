@@ -6,54 +6,89 @@
 
 
 .hero {
+    background-image: url('../../assets/10.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    aspect-ratio: 1.5;
+    width: 100vw;
+    max-inline-size: 100%;
+    object-fit: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+    padding: 0.5rem 2rem;
+    
     @include responsiveness('tablet') {
     }
     @include responsiveness('desktop') { 
     }
     &__general-info{
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
         @include responsiveness('tablet') {
+            justify-content: center;
+            gap: 4rem;
         }
         @include responsiveness('desktop') { 
+            justify-content: center;
+            gap: 8vh;
         }
     }
     &__header{
+        margin: 0;
+        margin-top: 2.5vh;
+        @include SizeLineWeight(6vw, 1.5rem, 700);
+        color: $colorBlue;
+        text-shadow: 0.125rem 0.125rem $colorOrange;
+        
         @include responsiveness('tablet') {
+            
         }
         @include responsiveness('desktop') { 
         }
     }
     &__Text{
+        text-transform: uppercase;
+        @include SizeLineWeight(2.5vw, 1.2rem, 600);
+        color: $colorW;
+        text-shadow: 0.125rem 0.125rem $colorB;
+        text-align: center;
+        margin-bottom: 2.5vh;
         @include responsiveness('tablet') {
+            width: 60%;
+            line-height: 5vh;
+            
         }
         @include responsiveness('desktop') { 
+            width: 60%;
+            line-height: 5vh;
         }
     }
-    &__subdivision{
-        @include responsiveness('tablet') {
-        }
-        @include responsiveness('desktop') { 
-        }
-    }
-    &__Image{
-        max-inline-size: 100%;
-        object-fit: cover;
-        @include responsiveness('tablet') {
-        }
-        @include responsiveness('desktop') { 
-        }
-    }
-
 }
 
 .about{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem 2rem;
+    
     @include responsiveness('tablet') {
     }
     @include responsiveness('desktop') { 
     }
     &__header{
+        text-align: center;
         @include responsiveness('tablet') {
+            font-size: 2.5vw;
         }
         @include responsiveness('desktop') { 
+            font-size: 2.5vw;
         }
     }
     &__details{
@@ -63,22 +98,50 @@
         }
     }
     &__Text{
+        text-align: center;
         @include responsiveness('tablet') {
+            text-align: justify;
+            font-size: 2vw;
         }
         @include responsiveness('desktop') { 
+            text-align: justify;
+            font-size: 2vw;
         }
-    }
-}
+}}
 
 .get-started{
+    padding: 1rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5rem;
+    align-items: center;
+    background-color: $colorW;
+
+
     @include responsiveness('tablet') {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+
     }
     @include responsiveness('desktop') { 
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
     }
     &__subdivision{
         @include responsiveness('tablet') {
+            width: 75%;
         }
         @include responsiveness('desktop') { 
+            width: 75%;
         }
     }
     &__Image{
@@ -90,9 +153,18 @@
         }
     }
     &__button{
+        border-radius: 2rem;
+        color: $colorW;
+        width: 50%;
+        @include SizeLineWeight(0.7rem, 1.5rem, 700);
+        background-color: $colorBlue;
         @include responsiveness('tablet') {
+            width: 17vw;
+            @include SizeLineWeight(1.2rem, 5vh, 700);
         }
         @include responsiveness('desktop') { 
+            width: 17vw;
+            @include SizeLineWeight(1.5rem, 5vh, 700);
         }
     }
 

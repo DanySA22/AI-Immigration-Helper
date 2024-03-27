@@ -1,22 +1,24 @@
 import axios from 'axios';
 import {useState, useEffect} from 'react'  
-import {useParams} from 'react-router-dom' 
+import {useNavigate} from 'react-router-dom' 
 import "./HomePage.scss"
-
-import Meeting from "../../assets/10.jpg"
 import Team from "../../assets/Images1-Shapes.jpg"
 
 function HomePage () {
+    const navigate = useNavigate()
+
+    const goToAiAssistancePage = () => {
+        navigate('/aiassistance')
+        window.scrollTo(0, 0)
+    }
     return (
         <>
         <section className='hero'>
             <div className='hero__general-info'>
-                <h1 className='hero__header'>AI-Immigration-Helper</h1>
-                <p className='hero__Text'>Making the immigration process Easier, Faster, and Straighforward.</p>
+                <h1 className='hero__header'>AI Immigration Helper</h1>
+                <p className='hero__Text'>Making the immigration process Easier, Faster, and Straightforward</p>
             </div>
-            <div className='hero__subdivision'>
-                <img src={Meeting} alt="Meeting" className='hero__Image'/>
-            </div>
+          
         </section>
         <section className='about'>
             <h3 className='about__header'> About this website</h3>
@@ -41,7 +43,7 @@ function HomePage () {
                 <img src={Team} alt=" Team " className='get-started__Image'/>
             </div>
             
-            <button className='get-started__button'>Let's try it!</button>
+            <button className='get-started__button' onClick={goToAiAssistancePage}>Let's try it!</button>
             
         </section>
         </>
