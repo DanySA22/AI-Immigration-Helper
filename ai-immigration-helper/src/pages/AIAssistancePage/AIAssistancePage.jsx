@@ -6,7 +6,7 @@ import { timeGap } from '../../utils/formatDate';
 import { historyRetrieve } from '../../services/historyOfOutputs';
 import { saveOutput } from '../../services/aiSaveOutput';
 import { submitInput } from '../../services/userInput';
-
+import "./AIAssistancePage.scss"
 function AiAssistance () {
     const [userinput, setUserInput] = useState('')
     const [aioutput, setAiOutput] = useState('')
@@ -71,11 +71,13 @@ const searchOnHistory = () => {
 
 return (
         <>
+        <main className='main'>
+          
         <div className='user-input'>
             <h3 className='user-input__header'> How can we help you with Immigration processes?</h3>
             <form action="" className='form' onSubmit={event => userInputCreation(event)}>
                 <textarea className='form__input' name="" id="" cols="30" rows="10" onChange={event => inputFromUser(event)}></textarea>
-                <input className='form__Submit'type="submit" />
+                <input className='form__Submit'type="submit" value='Send'/>
             </form>
         </div>
         <div className='ai-output'>
@@ -91,9 +93,9 @@ return (
             <h3 className='history__header'>Your Saved Information</h3>
             <div className='history__request'>
             <button className='history__button' onClick={retrieveOnHistory}>See History</button>
-            <button className='history__download' onClick={handleDownloadPDF}>Download Document</button>
+            <button className='history__download' onClick={handleDownloadPDF}>Download </button>
             <input type="text"  placeholder='Search...' onChange={event => inputtoSearch(event)} className='history__search-Input'/>
-            <button className='history__search-Button' onClick={searchOnHistory}></button>
+            <button className='history__search-Button' onClick={searchOnHistory}> Search </button>
             </div>
             <div className='history__Information' ref={contentRef}>
                 
@@ -105,6 +107,7 @@ return (
                 ))}
             </div>
         </div>
+        </main>
         </>
     )
 }
