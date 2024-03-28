@@ -7,6 +7,7 @@ import { historyRetrieve } from '../../services/historyOfOutputs';
 import { saveOutput } from '../../services/aiSaveOutput';
 import { submitInput } from '../../services/userInput';
 import "./AIAssistancePage.scss"
+
 function AiAssistance () {
     const [userinput, setUserInput] = useState('')
     const [aioutput, setAiOutput] = useState('')
@@ -76,7 +77,7 @@ return (
         <div className='user-input'>
             <h3 className='user-input__header'> How can we help you with Immigration processes?</h3>
             <form action="" className='form' onSubmit={event => userInputCreation(event)}>
-                <textarea className='form__input' name="" id="" cols="30" rows="10" onChange={event => inputFromUser(event)}></textarea>
+                <textarea className='form__input' value={userinput} cols="30" rows="10" onChange={event => inputFromUser(event)}></textarea>
                 <input className='form__Submit'type="submit" value='Send'/>
             </form>
         </div>

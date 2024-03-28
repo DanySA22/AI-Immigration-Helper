@@ -1,12 +1,20 @@
-import axios from 'axios';
-import {useState, useEffect} from 'react'  
-import {useNavigate} from 'react-router-dom' 
+import {useEffect} from 'react'  
+import {useLocation, useNavigate} from 'react-router-dom' 
 import "./HomePage.scss"
 import Team from "../../assets/Images1-Shapes.jpg"
 
 function HomePage () {
     const navigate = useNavigate()
+    const location = useLocation()
 
+    //Logout functionality
+
+    useEffect(() => {
+        if (location.pathname === '/') {
+              localStorage.removeItem('user Token:')
+        }
+    }, [location])
+    //Redirection to the AI Assistance page
     const goToAiAssistancePage = () => {
         navigate('/aiassistance')
         window.scrollTo(0, 0)

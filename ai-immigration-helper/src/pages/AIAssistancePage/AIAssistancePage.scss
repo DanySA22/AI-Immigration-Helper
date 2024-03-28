@@ -57,11 +57,15 @@
         font-family: 'AvenirNext LT Pro', sans-serif;
         width: 100%;
         overflow-y: scroll;
-        padding-left: 0.5rem;
-        padding-right: 0.5rem;
+        padding: 1rem 2rem;
+        
+
+        
         @include responsiveness('tablet') {
+            font-size: 2vw;
         }
         @include responsiveness('desktop') { 
+            font-size: 2vw;
         }
     }
     &__Submit{
@@ -124,12 +128,14 @@
         height: 40vh;
         border: 1px $colorB solid;
         overflow-y: scroll;
-        padding-left: 0.5rem;
-        padding-right: 0.5rem;
+        padding: 1rem 2rem;
+        
 
         @include responsiveness('tablet') {
+            font-size: 2vw;
         }
         @include responsiveness('desktop') { 
+            font-size: 2vw;
         }
     }
     &__Save{

@@ -19,7 +19,6 @@ function App() {
       <Route path="/login" element={<LoginPage/>} />
       <Route path="/aiassistance" element={<AIAssistancePage/>} />
       <Route path="/educational" element={<EducationalPage/>} />
-      {/* <Route path="*" element={<NotFoundPage />} /> */}
     </Routes>
     <Footer/>
   </BrowserRouter>
