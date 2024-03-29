@@ -1,5 +1,5 @@
 import axios from 'axios';
-import {useState, useEffect, useRef} from 'react'  
+import {useState, useRef} from 'react'  
 import { downloadToPDF } from '../../utils/downloadDocument';
 import { filterUserHistory } from '../../utils/searchHistory';
 import { timeGap } from '../../utils/formatDate';
@@ -7,12 +7,14 @@ import { historyRetrieve } from '../../services/historyOfOutputs';
 import { saveOutput } from '../../services/aiSaveOutput';
 import { submitInput } from '../../services/userInput';
 import "./AIAssistancePage.scss"
+
 function AiAssistance () {
     const [userinput, setUserInput] = useState('')
-    const [aioutput, setAiOutput] = useState('')
+    const [aioutput, setAiOutput] = useState('New AI output will display here...')
     const [history, setHistory] = useState([])
     const [searchInput, setSearchInput] = useState('')
     const [filteredData, setFilteredData] = useState(history)
+    const [placeholder, setPlaceholder] = useState('User saved history will display here...')
     const contentRef = useRef(null)
 
 //adding an Axios interceptor for including the JWT on the header of the request
@@ -54,7 +56,7 @@ saveOutput(aioutput, setAiOutput)
 
 //Retrieve user saved outputs history
 const retrieveOnHistory = () => {
-historyRetrieve(setHistory, setFilteredData)}
+historyRetrieve(setHistory, setFilteredData, setPlaceholder)}
 
 //download functionality
 const handleDownloadPDF = () => {
@@ -74,9 +76,9 @@ return (
         <main className='main'>
           
         <div className='user-input'>
-            <h3 className='user-input__header'> How can we help you with Immigration processes?</h3>
+            <h3 className='user-input__header'> How can we help you with immigration processes?</h3>
             <form action="" className='form' onSubmit={event => userInputCreation(event)}>
-                <textarea className='form__input' name="" id="" cols="30" rows="10" onChange={event => inputFromUser(event)}></textarea>
+                <textarea className='form__input' value={userinput} cols="30" rows="10" placeholder='Add your question here ...' onChange={event => inputFromUser(event)}></textarea>
                 <input className='form__Submit'type="submit" value='Send'/>
             </form>
         </div>
@@ -98,8 +100,9 @@ return (
             <button className='history__search-Button' onClick={searchOnHistory}> Search </button>
             </div>
             <div className='history__Information' ref={contentRef}>
-                
+            {placeholder}
              {filteredData.map(item => (
+                
                 <div className='history__Text-Subdiv' key={item.id}>
                 <p className='history__Text-Date'> {timeGap(item.date)}</p>
                 <p className='history__Text-Content'> {item.openAiOutput}</p>

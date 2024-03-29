@@ -11,10 +11,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    @include responsiveness('tablet') {
-    }
-    @include responsiveness('desktop') { 
-    }
+   
     &__header{
         text-align: center;
         margin: 0;
@@ -22,6 +19,7 @@
         @include SizeLineWeight(1.2rem, 1.5rem, 700);
         @include responsiveness('tablet') {
             font-size: 2.5vw;
+            margin-bottom: 2vh;
         }
         @include responsiveness('desktop') { 
             font-size: 2.5vw;
@@ -50,10 +48,7 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    @include responsiveness('tablet') {
-    }
-    @include responsiveness('desktop') { 
-    }
+   
     &__label{
         @include SizeLineWeight(0.8rem, 1.25rem, 600);
         width: 100%;
@@ -62,6 +57,8 @@
         padding-bottom: 0.5rem;
         @include responsiveness('tablet') {
             font-size: 2vw;
+            padding-top: 2vh;
+            padding-bottom: 2vh;
         }
         @include responsiveness('desktop') { 
             font-size: 2vw;
@@ -93,6 +90,9 @@
         background-color: $colorBlue;
         @include responsiveness('tablet') {
             @include SizeLineWeight(2vw, 2rem, 700);
+            width: 40%;
+            margin-top: 2vh;
+            margin-bottom: 2vh;
         }
         @include responsiveness('desktop') { 
             margin-top: 3vh;
@@ -101,6 +101,10 @@
             width: 40%;
             @include SizeLineWeight(2vw, 4vh, 700);
         }
+    }
+
+    &__submit:hover {
+        background-color: $colorB;
     }
 }
 
@@ -143,13 +147,17 @@
     @include SizeLineWeight(0.7rem, 1.5rem, 700);
     background-color: $colorBlue;
     @include responsiveness('tablet') {
-        @include SizeLineWeight(2vw, 2rem, 700);
+        @include SizeLineWeight(2vw, 3vh, 700);
+        width: 40%;
     }
     @include responsiveness('desktop') { 
         margin-top: 2vh;
         margin-bottom: 3vh;
-        font-size: 2vw;
         width: 40%;
         @include SizeLineWeight(2vw, 4vh, 700);
     }
+}
+
+.login-google:hover {
+    background-color: $colorB;
 }

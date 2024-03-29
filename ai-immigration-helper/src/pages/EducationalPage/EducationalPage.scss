@@ -4,7 +4,7 @@
 @import '../../styles/partials/mixins';
 
 
-
+//Start of best practices section
 .best-practices{
 
     display: flex;
@@ -15,11 +15,7 @@
     padding-right: 2rem;
     background-color: $colorW;
     margin-bottom: 1rem;
-    @include responsiveness('tablet') {
-
-    }
-    @include responsiveness('desktop') { 
-    }
+   
     &__Header{
         text-align: center;
         @include responsiveness('tablet') {
@@ -58,8 +54,15 @@
             text-align: justify;
             font-size: 2vw;
         }
+        &--highlight{
+            font-weight: 700;
+        }
     }
 }
+
+//End of best practices section
+
+//Start of education section
 
 .education{
     padding-left: 2rem;
@@ -81,7 +84,6 @@
         padding-bottom: 2rem;
     }
     &__subdivision{
-        
         @include responsiveness('tablet') {
             width: 65%;
             
@@ -93,11 +95,7 @@
     &__image{
         max-inline-size: 100%;
         object-fit: cover;
-        @include responsiveness('tablet') {
-            
-        }
-        @include responsiveness('desktop') { 
-        }
+       
     }
 
 }
@@ -130,6 +128,7 @@
         text-decoration: none;
         text-align: center;
         margin-bottom: 1rem;
+        color: $colorBlue;
         @include responsiveness('tablet') {
             font-size: 2vw;
         }
@@ -137,7 +136,13 @@
             font-size: 2vw;
         }
     }
+    &__Link:hover {
+        color: $colorOrange;
+    }
 }
+// End of education section
+
+//Start of advisor section
 
 .advisor{
     padding-left: 2rem;
@@ -212,6 +217,7 @@
         text-decoration: none;
         text-align: center;
         margin-bottom: 1rem;
+        color: $colorBlue;
         @include responsiveness('tablet') {
             font-size: 2vw;
         }
@@ -219,4 +225,9 @@
             font-size: 2vw;
         }
     }
+    &__Link:hover {
+        color: $colorOrange;
+    }
 }
+
+//End of advisor section
