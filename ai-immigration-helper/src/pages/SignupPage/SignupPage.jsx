@@ -1,5 +1,5 @@
 import axios from 'axios';
-import {useState, useEffect} from 'react'  
+import {useState} from 'react'  
 import {useNavigate} from 'react-router-dom' 
 import "./SignupPage.scss"
 
@@ -11,6 +11,8 @@ const [email, setEmail] = useState('')
 const [password, setPassword] = useState('')
 const navigate = useNavigate() 
 
+
+//sign up functionality
 const inputUsername = (event) => {
     setUsername(event.target.value)
 }

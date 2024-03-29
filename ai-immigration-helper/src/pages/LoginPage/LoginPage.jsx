@@ -1,5 +1,5 @@
 import axios from 'axios';
-import {useState, useEffect} from 'react'  
+import {useState} from 'react'  
 import {useNavigate} from 'react-router-dom' 
 import "./LoginPage.scss"
 
@@ -8,6 +8,8 @@ function LoginPage () {
 const [username, setUsername] = useState('')
 const [password, setPassword] = useState('')
 const navigate = useNavigate() 
+
+//Login post functionality
 
 const inputUsername = (event) => {
     setUsername(event.target.value)
@@ -47,6 +49,12 @@ const submitResult = (event) => {
     }
 }
 
+//Alert when Google authentication button gets clicked
+
+const googleAuthentNotification = () => {
+        alert("Coming soon!")
+    }
+
     return (
         <>
          <div className='login'>
@@ -65,7 +73,7 @@ const submitResult = (event) => {
                 <div className='separation__lines'></div>
             </div>
             
-            <button className='login-google'>SIGN IN WITH GOOGLE </button>
+            <button className='login-google' onClick={googleAuthentNotification}>SIGN IN WITH GOOGLE </button>
 
             </div>
         </div>

@@ -10,10 +10,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    @include responsiveness('tablet') {
-    }
-    @include responsiveness('desktop') { 
-    }
+    
     &__header{
         text-align: center;
         margin: 0;
@@ -21,6 +18,7 @@
         @include SizeLineWeight(1.2rem, 1.5rem, 700);
         @include responsiveness('tablet') {
             font-size: 2.5vw;
+            margin-bottom: 3vh;
         }
         @include responsiveness('desktop') { 
             font-size: 2.5vw;
@@ -52,6 +50,8 @@
         padding-bottom: 0.5rem;
         @include responsiveness('tablet') {
             font-size: 2vw;
+            padding-top: 2vh;
+            padding-bottom: 2vh;
         }
         @include responsiveness('desktop') { 
             font-size: 2vw;
@@ -66,10 +66,10 @@
         font-family: 'AvenirNext LT Pro', sans-serif;
         
         @include responsiveness('tablet') {
-            line-height: 5vh;
+            line-height: 3vh;
         }
         @include responsiveness('desktop') { 
-            line-height: 5vh;
+            line-height: 3vh;
             width: 50%;
         }
     }
@@ -83,6 +83,8 @@
         background-color: $colorBlue;
         @include responsiveness('tablet') {
             @include SizeLineWeight(2vw, 2rem, 700);
+            margin-top: 2vh;
+            margin-bottom: 2vh;
         }
         @include responsiveness('desktop') { 
             margin-top: 2vh;
@@ -91,5 +93,8 @@
             width: 40%;
             @include SizeLineWeight(2vw, 4vh, 700);
         }
+    }
+    &__submit:hover {
+        background-color: $colorB;
     }
 }

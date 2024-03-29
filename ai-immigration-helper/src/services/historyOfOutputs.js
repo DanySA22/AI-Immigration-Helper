@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export const historyRetrieve = (setHistory, setFilteredData) => {
+export const historyRetrieve = (setHistory, setFilteredData, setPlaceholder) => {
     try {
         const historyUserRetrieve = async () => {
         const userHistory = await axios.get('http://localhost:8080/history')
@@ -9,6 +9,7 @@ export const historyRetrieve = (setHistory, setFilteredData) => {
         }
         setHistory(userHistory.data)  
         setFilteredData(userHistory.data)
+        setPlaceholder('')
         }
     
         historyUserRetrieve()

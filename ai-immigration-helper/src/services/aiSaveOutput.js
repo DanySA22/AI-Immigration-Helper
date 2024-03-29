@@ -15,7 +15,7 @@ try {
     if (savedAnswer.data.noLogged === true) {
         alert(savedAnswer.data.message)
     }
-    setAiOutput('')
+    setAiOutput('New AI output will display here...')
       
     }
 

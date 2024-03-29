@@ -1,12 +1,12 @@
 @use '../../styles/partials/global' as *;
 @use '../../styles/partials/variables' as *;   
 @use '../../styles/partials/fonts' as *;
-@import '../../styles/partials/mixins';
+@import '../../styles/partials/mixins';   
 
 
-
+//Start of hero section
 .hero {
-    background-image: url('../../assets/10.jpg');
+    background-image: url('../../assets/Hero2.png');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -20,10 +20,6 @@
     align-items: center;
     padding: 0.5rem 2rem;
     
-    @include responsiveness('tablet') {
-    }
-    @include responsiveness('desktop') { 
-    }
     &__general-info{
         height: 100%;
         display: flex;
@@ -45,12 +41,8 @@
         @include SizeLineWeight(6vw, 1.5rem, 700);
         color: $colorBlue;
         text-shadow: 0.125rem 0.125rem $colorOrange;
-        
-        @include responsiveness('tablet') {
-            
-        }
-        @include responsiveness('desktop') { 
-        }
+       
+       
     }
     &__Text{
         text-transform: uppercase;
@@ -71,6 +63,10 @@
     }
 }
 
+//End of hero section
+
+//Start of about section
+
 .about{
     display: flex;
     flex-direction: column;
@@ -78,10 +74,6 @@
     align-items: center;
     padding: 0.5rem 2rem;
     
-    @include responsiveness('tablet') {
-    }
-    @include responsiveness('desktop') { 
-    }
     &__header{
         text-align: center;
         @include responsiveness('tablet') {
@@ -91,12 +83,7 @@
             font-size: 2.5vw;
         }
     }
-    &__details{
-        @include responsiveness('tablet') {
-        }
-        @include responsiveness('desktop') { 
-        }
-    }
+    
     &__Text{
         text-align: center;
         @include responsiveness('tablet') {
@@ -107,7 +94,14 @@
             text-align: justify;
             font-size: 2vw;
         }
+        &--highlight{
+            font-weight: 700;
+        }
 }}
+
+//End of about section
+
+//Start of get-started section
 
 .get-started{
     padding: 1rem 2rem;
@@ -147,10 +141,7 @@
     &__Image{
         max-inline-size: 100%;
         object-fit: cover;
-        @include responsiveness('tablet') {
-        }
-        @include responsiveness('desktop') { 
-        }
+       
     }
     &__button{
         border-radius: 2rem;
@@ -167,5 +158,10 @@
             @include SizeLineWeight(1.5rem, 5vh, 700);
         }
     }
+    &__button:hover {
+        background-color: $colorOrange;
+    }
 
 }
+
+//End of get-started section

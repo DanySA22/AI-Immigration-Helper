@@ -41,10 +41,7 @@
         object-fit: cover;
         border-radius: 25%;
                 
-        @include responsiveness('tablet') {
-        }
-        @include responsiveness('desktop') { 
-        }
+     
     }
     &__subdivision{
         display: flex;
@@ -69,6 +66,7 @@
     }
 
     &__Link{
+        
         text-decoration: none;
         margin-bottom: 0.5rem;
         color: $colorOrange;
@@ -82,5 +80,13 @@
             font-size: 2.3vw;
         }
     }
+    &__Link:hover {
+        color: $colorBlue;
+    }
+}
+
+
+.active{
+    color: $colorBlue;
     
 }
