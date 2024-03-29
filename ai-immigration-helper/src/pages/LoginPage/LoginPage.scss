@@ -1,0 +1,163 @@
+@use '../../styles/partials/global' as *;
+@use '../../styles/partials/variables' as *;   
+@use '../../styles/partials/fonts' as *;
+@import '../../styles/partials/mixins';
+
+
+
+.login{
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   
+    &__header{
+        text-align: center;
+        margin: 0;
+        margin-bottom: 0.8rem;
+        @include SizeLineWeight(1.2rem, 1.5rem, 700);
+        @include responsiveness('tablet') {
+            font-size: 2.5vw;
+            margin-bottom: 2vh;
+        }
+        @include responsiveness('desktop') { 
+            font-size: 2.5vw;
+            margin-bottom: 3vh;
+        }
+    }
+    &__subdivision{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: $colorOrange;
+        width: 65%;
+        @include responsiveness('tablet') {
+            padding-top: 0.5rem;
+        }
+        @include responsiveness('desktop') { 
+        }
+    }
+
+}
+
+.login-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+   
+    &__label{
+        @include SizeLineWeight(0.8rem, 1.25rem, 600);
+        width: 100%;
+        text-align: center;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        @include responsiveness('tablet') {
+            font-size: 2vw;
+            padding-top: 2vh;
+            padding-bottom: 2vh;
+        }
+        @include responsiveness('desktop') { 
+            font-size: 2vw;
+            padding-top: 2vh;
+            padding-bottom: 2vh;
+        }
+    }
+    &__input{
+        width: 80%;
+        border-radius: 0.25rem;
+        background-color: $colorW;
+        line-height: 2.5vh;
+        font-family: 'AvenirNext LT Pro', sans-serif;
+        @include responsiveness('tablet') {
+            line-height: 3vh;
+        }
+        @include responsiveness('desktop') { 
+            width: 50%;
+            line-height: 3vh;
+        }
+    }
+    &__submit{
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        border-radius: 2rem;
+        color: $colorW;
+        width: 50%;
+        @include SizeLineWeight(0.7rem, 1.5rem, 700);
+        background-color: $colorBlue;
+        @include responsiveness('tablet') {
+            @include SizeLineWeight(2vw, 2rem, 700);
+            width: 40%;
+            margin-top: 2vh;
+            margin-bottom: 2vh;
+        }
+        @include responsiveness('desktop') { 
+            margin-top: 3vh;
+            margin-bottom: 3vh;
+            font-size: 2vw;
+            width: 40%;
+            @include SizeLineWeight(2vw, 4vh, 700);
+        }
+    }
+
+    &__submit:hover {
+        background-color: $colorB;
+    }
+}
+
+.separation{
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    @include responsiveness('tablet') {
+    }
+    @include responsiveness('desktop') { 
+    }
+    &__lines{
+        border: 1px $colorB solid;
+        width: 35%;
+        @include responsiveness('tablet') {
+        }
+        @include responsiveness('desktop') { 
+        }
+    }
+    &__text{
+        @include SizeLineWeight(0.8rem, 1.25rem, 700);
+
+        @include responsiveness('tablet') {
+            @include SizeLineWeight(2vw, 1.25rem, 700);
+        }
+        @include responsiveness('desktop') { 
+            @include SizeLineWeight(2vw, 1.25rem, 700);
+        }
+    }
+}
+
+.login-google{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 2rem;
+    color: $colorW;
+    width: 80%;
+    @include SizeLineWeight(0.7rem, 1.5rem, 700);
+    background-color: $colorBlue;
+    @include responsiveness('tablet') {
+        @include SizeLineWeight(2vw, 3vh, 700);
+        width: 40%;
+    }
+    @include responsiveness('desktop') { 
+        margin-top: 2vh;
+        margin-bottom: 3vh;
+        width: 40%;
+        @include SizeLineWeight(2vw, 4vh, 700);
+    }
+}
+
+.login-google:hover {
+    background-color: $colorB;
+}

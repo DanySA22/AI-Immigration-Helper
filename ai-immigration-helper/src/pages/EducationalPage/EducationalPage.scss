@@ -1,0 +1,233 @@
+@use '../../styles/partials/global' as *;
+@use '../../styles/partials/variables' as *;   
+@use '../../styles/partials/fonts' as *;
+@import '../../styles/partials/mixins';
+
+
+//Start of best practices section
+.best-practices{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    background-color: $colorW;
+    margin-bottom: 1rem;
+   
+    &__Header{
+        text-align: center;
+        @include responsiveness('tablet') {
+            font-size: 2rem;
+        }
+        @include responsiveness('desktop') { 
+            font-size: 2.2vw;
+        }
+    }
+    &__Content{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-bottom: 1px $colorB inset;
+        @include responsiveness('tablet') {
+                
+        justify-content: space-between;
+        align-items: top;
+        border-bottom: 0;
+           
+        }
+        @include responsiveness('desktop') { 
+        justify-content: space-between;
+        align-items: top;
+        border-bottom: 0;
+        }
+    }
+    &__Text{
+        text-align: center;
+        @include responsiveness('tablet') {
+            text-align: justify;
+            font-size: 2vw;
+        }
+        @include responsiveness('desktop') { 
+            text-align: justify;
+            font-size: 2vw;
+        }
+        &--highlight{
+            font-weight: 700;
+        }
+    }
+}
+
+//End of best practices section
+
+//Start of education section
+
+.education{
+    padding-left: 2rem;
+    padding-right: 2rem;
+    @include responsiveness('tablet') {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+    @include responsiveness('desktop') { 
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+    &__subdivision{
+        @include responsiveness('tablet') {
+            width: 65%;
+            
+        }
+        @include responsiveness('desktop') { 
+            width: 65%;
+        }
+    }
+    &__image{
+        max-inline-size: 100%;
+        object-fit: cover;
+       
+    }
+
+}
+
+.education-links{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-bottom: 1px $colorB inset;
+
+    @include responsiveness('tablet') {
+        width: 35%;
+        border-bottom: 0;
+    }
+    @include responsiveness('desktop') { 
+        width: 35%;
+        border-bottom: 0;
+    }
+    &__Header{
+        text-align: center;
+        @include responsiveness('tablet') {
+            font-size: 2vw;
+        }
+        @include responsiveness('desktop') { 
+            font-size: 2vw;
+        }
+    }
+    &__Link{
+        text-decoration: none;
+        text-align: center;
+        margin-bottom: 1rem;
+        color: $colorBlue;
+        @include responsiveness('tablet') {
+            font-size: 2vw;
+        }
+        @include responsiveness('desktop') { 
+            font-size: 2vw;
+        }
+    }
+    &__Link:hover {
+        color: $colorOrange;
+    }
+}
+// End of education section
+
+//Start of advisor section
+
+.advisor{
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 1rem;
+    background-color: $colorW;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+
+    @include responsiveness('tablet') {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+    @include responsiveness('desktop') { 
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+    &__subdivision{
+        @include responsiveness('tablet') {
+            width: 75%;
+        }
+        @include responsiveness('desktop') { 
+            width: 75%;
+        }
+    }
+    &__image{
+        max-inline-size: 100%;
+        object-fit: cover;
+        @include responsiveness('tablet') {
+            
+        }
+        @include responsiveness('desktop') { 
+        }
+    }
+}
+
+.advisor-links{
+    order: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @include responsiveness('tablet') {
+        order: 0;
+    }
+    @include responsiveness('desktop') { 
+        order: 0;
+    }
+    &__Header{
+        text-align: center;
+        
+        @include responsiveness('tablet') {
+            font-size: 2vw;
+        }
+        @include responsiveness('desktop') { 
+            font-size: 2vw;
+        }
+    }
+    &__Link{
+        text-decoration: none;
+        text-align: center;
+        margin-bottom: 1rem;
+        color: $colorBlue;
+        @include responsiveness('tablet') {
+            font-size: 2vw;
+        }
+        @include responsiveness('desktop') { 
+            font-size: 2vw;
+        }
+    }
+    &__Link:hover {
+        color: $colorOrange;
+    }
+}
+
+//End of advisor section

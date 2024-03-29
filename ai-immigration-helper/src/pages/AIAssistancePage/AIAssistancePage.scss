@@ -1,0 +1,286 @@
+@use '../../styles/partials/global' as *;
+@use '../../styles/partials/variables' as *;   
+@use '../../styles/partials/fonts' as *;
+@import '../../styles/partials/mixins';
+
+.main{
+   
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 2rem;
+    margin-right: 2rem;
+   
+}
+
+//Start of user input section
+
+.user-input{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $colorOrange;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    
+    &__header{
+        text-align: center;
+        
+        @include responsiveness('tablet') {
+            font-size: 1.2rem;
+        }
+        @include responsiveness('desktop') { 
+            font-size: 1.5rem;
+        }
+    }
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+   
+    &__input {
+        border-radius: 0.25rem;
+        background-color: $colorW;
+        font-family: 'AvenirNext LT Pro', sans-serif;
+        width: 100%;
+        overflow-y: scroll;
+        padding: 1rem 2rem;
+        
+
+        
+        @include responsiveness('tablet') {
+            font-size: 2vw;
+        }
+        @include responsiveness('desktop') { 
+            font-size: 2vw;
+        }
+    }
+    &__Submit{
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        border-radius: 2rem;
+        color: $colorW;
+        width: 50%;
+        @include SizeLineWeight(0.7rem, 1.5rem, 700);
+        background-color: $colorBlue;
+
+        @include responsiveness('tablet') {
+            width: 30%;
+            @include SizeLineWeight(1.2rem, 1.6rem, 700);
+        }
+        @include responsiveness('desktop') { 
+            width: 30%;
+            @include SizeLineWeight(1.5rem, 1.8rem, 700);
+        }
+    }
+    &__Submit:hover {
+        background-color: $colorB;
+    }
+}
+
+//End of user input section
+
+//Start of ai output section
+
+.ai-output{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $colorBlue;
+    margin-bottom: 2rem;
+    width: 100%;
+   
+    &__header{
+        text-align: center;
+    @include responsiveness('tablet') {
+        font-size: 1.2rem;
+    }
+    @include responsiveness('desktop') { 
+        font-size: 1.5rem;
+    }}
+    &__subdivision{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+       
+    }
+    &__Text{
+        background-color: $colorW;
+        border-radius: 0.25rem;
+        font-family: 'AvenirNext LT Pro', sans-serif;
+        width: 100%;
+        height: 40vh;
+        border: 1px $colorB solid;
+        overflow-y: scroll;
+        padding: 1rem 2rem;
+        font-size: 2vw;
+
+       
+    }
+    &__Save{
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        border-radius: 2rem;
+        color: $colorW;
+        width: 50%;
+        @include SizeLineWeight(0.7rem, 1.5rem, 700);
+        background-color: $colorBlue;
+        @include responsiveness('tablet') {
+            width: 30%;
+            @include SizeLineWeight(1.2rem, 1.6rem, 700);
+        }
+        @include responsiveness('desktop') { 
+            width: 30%;
+            @include SizeLineWeight(1.5rem, 1.8rem, 700);
+        }
+    }
+    &__Save:hover {
+        background-color: $colorB;
+    }
+
+}
+
+//End of ai output section
+
+//Start of history section
+
+.history{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 1.5rem;
+    background-color: $colorOrange;
+   
+    &__header{
+        @include responsiveness('tablet') {
+            font-size: 1.2rem;
+        }
+        @include responsiveness('desktop') { 
+            font-size: 1.5rem;
+        }
+    }
+    &__request{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        
+    }
+    &__button{
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        border-radius: 2rem;
+        color: $colorW;
+        width: 50%;
+        @include SizeLineWeight(0.7rem, 1.5rem, 700);
+        background-color: $colorBlue;
+        @include responsiveness('tablet') {
+            @include SizeLineWeight(1.2rem, 1.6rem, 700);
+        }
+        @include responsiveness('desktop') { 
+            width: 30%;
+            @include SizeLineWeight(1.5rem, 1.8rem, 700);
+        }
+    }
+    &__button:hover {
+        background-color: $colorB;
+    }
+    &__download{
+        margin-bottom: 1rem;
+        border-radius: 2rem;
+        color: $colorW;
+        width: 50%;
+        @include SizeLineWeight(0.7rem, 1.5rem, 700);
+        background-color: $colorBlue;
+        @include responsiveness('tablet') {
+            @include SizeLineWeight(1.2rem, 1.6rem, 700);
+        }
+        @include responsiveness('desktop') { 
+            width: 30%;
+            @include SizeLineWeight(1.5rem, 1.8rem, 700);
+        }
+    }
+    &__download:hover {
+        background-color: $colorB;
+    }
+    &__search-Input{
+        width: 50%;
+        line-height: 1.5rem;
+        @include responsiveness('tablet') {
+            line-height: 1.6rem;
+            
+        }
+        @include responsiveness('desktop') { 
+            width: 30%;
+            @include SizeLineWeight(1.5rem, 1.8rem, 700);
+        }
+    }
+    &__search-Button{
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        border-radius: 2rem;
+        color: $colorW;
+        width: 50%;
+        @include SizeLineWeight(0.7rem, 1.5rem, 700);
+        background-color: $colorBlue;
+        @include responsiveness('tablet') {
+            @include SizeLineWeight(1.2rem, 1.6rem, 700);
+        }
+        @include responsiveness('desktop') { 
+            width: 30%;
+            @include SizeLineWeight(1.5rem, 1.8rem, 700);
+        }
+    }
+
+    &__search-Button:hover {
+        background-color: $colorB;
+    }
+    &__Information{
+        background-color: $colorW;
+        border-radius: 0.25rem;
+        font-family: 'AvenirNext LT Pro', sans-serif;
+        width: 100%;
+        height: 40vh;
+        border: 1px $colorB solid;
+        overflow-y: scroll;
+        padding-left: 2rem;
+        padding-right: 0.5rem;
+        padding-top: 1rem;
+        font-size: 2vw;
+       
+    }
+    &__Text-Subdiv{
+        border-bottom: 1px $colorB solid;
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+        padding-bottom: 0.5rem;
+        text-align: start;
+        color: $colorB;
+       
+    }
+    &__Text-Date{
+        
+        @include SizeLineWeight(1rem, 1.5rem, 700);
+       
+    }
+    &__Text-Content{
+        padding-top: 1rem;
+        @include SizeLineWeight(1rem, 1.5rem, 400);
+       
+    }
+}
+
+//End of history section
