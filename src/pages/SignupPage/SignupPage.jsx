@@ -2,7 +2,7 @@ import axios from 'axios';
 import {useState} from 'react'  
 import {useNavigate} from 'react-router-dom' 
 import "./SignupPage.scss"
-
+const {REACT_APP_API_URL} = process.env
 
 function SignupPage () {
 
@@ -39,7 +39,7 @@ const submitResult = (event) => {
             password: password
         }
         console.log(body)
-        const newUser = await axios.post('http://localhost:8080/authent/sign-up', body)
+        const newUser = await axios.post(`${REACT_APP_API_URL}/authent/sign-up`, body)
         setUsername('')
         setEmail('')
         setPassword('')

@@ -87,7 +87,7 @@ I will be using the MERN stack as the core and adding technologies on top of tha
 
 + Styling: Sass 
 
- + Client-Side functionality: React.js, Axios library  
++ Client-Side functionality: React.js, Axios library  
 
 + Server-side functionality:  Node.js, Express.js  
 

@@ -2,8 +2,8 @@ import axios from 'axios';
 import {useState} from 'react'  
 import {useNavigate} from 'react-router-dom' 
 import "./LoginPage.scss"
-
-
+const {REACT_APP_API_URL} = process.env
+console.log(REACT_APP_API_URL)
 function LoginPage () {
 const [username, setUsername] = useState('')
 const [password, setPassword] = useState('')
@@ -34,7 +34,7 @@ const submitResult = (event) => {
             password: password
         }
         console.log(body)
-        const newUser = await axios.post('http://localhost:8080/authent/login', body)
+        const newUser = await axios.post(`${REACT_APP_API_URL}/authent/login`, body)
         setUsername('')
         setPassword('') 
         const tokenObject = JSON.stringify(newUser.data)
