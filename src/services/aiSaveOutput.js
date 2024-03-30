@@ -1,5 +1,5 @@
 import axios from 'axios';
-
+const {REACT_APP_API_URL} = process.env
 export const saveOutput = (aioutput, setAiOutput) => {
 
 try {
@@ -9,7 +9,7 @@ try {
            openAiOutput: aioutput
         }
     
-    const savedAnswer = await axios.post('http://localhost:8080/ai/output/save', body)
+    const savedAnswer = await axios.post(`${REACT_APP_API_URL}/ai/output/save`, body)
     console.log(savedAnswer)
     
     if (savedAnswer.data.noLogged === true) {

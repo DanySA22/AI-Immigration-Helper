@@ -1,9 +1,9 @@
 import axios from 'axios';
-
+const {REACT_APP_API_URL} = process.env
 export const historyRetrieve = (setHistory, setFilteredData, setPlaceholder) => {
     try {
         const historyUserRetrieve = async () => {
-        const userHistory = await axios.get('http://localhost:8080/history')
+        const userHistory = await axios.get(`${REACT_APP_API_URL}/history`)
         if (userHistory.data.noLogged === true) {
             return alert(userHistory.data.message)
         }
