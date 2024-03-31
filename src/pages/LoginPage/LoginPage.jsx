@@ -29,21 +29,29 @@ const submitResult = (event) => {
     try {
         
         const loginFormPost = async () => {
-        const body = {
-            username: username,
-            password: password
+        try {
+            const body = {
+                username: username,
+                password: password
+            }
+            
+            const newUser = await axios.post(`${REACT_APP_API_URL}/authent/login`, body)
+            setUsername('')
+            setPassword('') 
+            const tokenObject = JSON.stringify(newUser.data)
+            localStorage.setItem('user Token:', tokenObject)
+            navigate('/aiassistance')
+        } catch (error) {
+            if (error.response.status === 400) {
+                alert('Username or password is incorrect. Try again!')
+                return
+            } 
         }
-        console.log(body)
-        const newUser = await axios.post(`${REACT_APP_API_URL}/authent/login`, body)
-        setUsername('')
-        setPassword('') 
-        const tokenObject = JSON.stringify(newUser.data)
-        localStorage.setItem('user Token:', tokenObject)
-       
+        
     }
 
     loginFormPost()
-    navigate('/aiassistance')
+    
     } catch (error) {
         console.error('Error submitting the form:', error)
     }
@@ -52,7 +60,7 @@ const submitResult = (event) => {
 //Alert when Google authentication button gets clicked
 
 const googleAuthentNotification = () => {
-        alert("Coming soon!")
+        alert("Google Authentication is not set up yet. Coming soon!")
     }
 
     return (

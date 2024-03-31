@@ -38,7 +38,7 @@ const submitResult = (event) => {
             email: email,
             password: password
         }
-        console.log(body)
+        
         const newUser = await axios.post(`${REACT_APP_API_URL}/authent/sign-up`, body)
         setUsername('')
         setEmail('')
