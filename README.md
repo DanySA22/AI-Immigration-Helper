@@ -20,9 +20,9 @@ This app is an Artificial Intelligence assistant for Canadian immigration legal 
 
 ### Screenshots Samples
 
-![Home Page](./ReadmeImages/HomePage.jpg)
+![Home Page](./ReadmeImages/Screenshot-HomePage.png)
 
-![Educational Page](./ReadmeImages/EducationalPage.jpg)
+![Educational Page](./ReadmeImages/Screenshot-EducationalPage.png)
 
 ### Application target problem and benefits
 
